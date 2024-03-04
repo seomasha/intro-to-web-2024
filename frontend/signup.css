@@ -16,9 +16,9 @@ span {
 .signin {
   background-color: #FAFAFA;
   width: 500px;
-  height: 600px;
+  height: 800px;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 20px;
   border-radius: 24px;
   display: flex;
   padding: 8px;
@@ -37,6 +37,13 @@ span {
 .signin form input {
   padding: 16px;
 }
+.signin form .names {
+  display: flex;
+  gap: 8px;
+}
+.signin form .input-group span {
+  color: #00396C;
+}
 .signin button {
   margin-top: 24px;
 }
@@ -51,4 +58,4 @@ span {
 }
 .signin .links a:hover {
   color: #00396C;
-}/*# sourceMappingURL=signin.css.map */
+}/*# sourceMappingURL=signup.css.map */

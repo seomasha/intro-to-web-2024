@@ -20,9 +20,9 @@ span {
 .signin {
     background-color: $gray;
     width: 500px;
-    height: 600px;
+    height: 800px;
     margin: auto;
-    margin-top: 120px;
+    margin-top: 20px;
     border-radius: 24px;
     display: flex;
     padding: 8px;
@@ -42,6 +42,15 @@ span {
 
         input {
             padding: 16px;
+        }
+
+        .names {
+            display: flex;
+            gap: 8px;
+        }
+
+        .input-group span {
+            color: $blue;
         }
     }
 
