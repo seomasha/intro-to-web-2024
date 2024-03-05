@@ -44,9 +44,10 @@ span {
             padding: 16px;
         }
 
-        .names {
+        .names{
             display: flex;
-            gap: 8px;
+            justify-content: space-between;
+            gap: 16px;
         }
 
         .input-group span {
