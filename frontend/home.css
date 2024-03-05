@@ -39,4 +39,8 @@ nav .container span {
 
 .nav-link a:hover {
   color: #00396C;
+}
+
+.comment, .friend {
+  background-color: #FAFAFA;
 }/*# sourceMappingURL=home.css.map */
