@@ -108,7 +108,14 @@
           />
           <h1 class="fs-4 mt-4">Sead Mašetić</h1>
           <h3 class="fs-6 text-secondary">@seadmasetic</h3>
-          <button class="btn btn-outline-primary mt-3">Edit profile</button>
+          <button
+            class="btn btn-outline-primary mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#edit-profile"
+          >
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            Edit profile
+          </button>
         </div>
         <div
           class="col-xl-6 bg-white rounded-5 p-4 overflow-y-scroll"
@@ -189,7 +196,11 @@
               </h6>
             </div>
             <div class="my-auto p-2">
-              <button class="btn btn-outline-primary">
+              <button
+                class="btn btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#add-friend"
+              >
                 <i class="fa fa-user-plus" aria-hidden="true"></i>
               </button>
             </div>
@@ -208,17 +219,27 @@
               </h6>
             </div>
             <div class="my-auto p-2">
-              <button class="btn btn-outline-primary">
+              <button
+                class="btn btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#add-friend"
+              >
                 <i class="fa fa-user-plus" aria-hidden="true"></i>
               </button>
             </div>
           </div>
-          <button class="btn btn-outline-primary mt-4">Discover more</button>
+          <a href="./friends.html" class="btn btn-outline-primary my-4"
+            >Discover more</a
+          >
         </div>
         <div class="col-xl-12 bg-white p-4 rounded-5">
           <div class="d-flex justify-content-between mb-4">
             <h4 style="color: #00396c">My startups</h4>
-            <button class="btn btn-outline-primary">
+            <button
+              class="btn btn-outline-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#create-startup"
+            >
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
           </div>
@@ -231,14 +252,20 @@
               />
               <div class="card-body">
                 <h4 class="card-title text-center" style="color: #00396c">
-                  Sead Mašetić
+                  My IT Startup
                 </h4>
-                <p class="card-text text-center text-secondary">@seadmasetic</p>
+                <p class="card-text text-center text-secondary">
+                  Startup description
+                </p>
                 <div class="text-center mt-4">
-                  <a href="#" class="btn btn-outline-primary"
-                    ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
-                    friend</a
+                  <button
+                    class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-startup"
                   >
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit startup
+                  </button>
                 </div>
               </div>
             </div>
@@ -250,14 +277,20 @@
               />
               <div class="card-body">
                 <h4 class="card-title text-center" style="color: #00396c">
-                  Sead Mašetić
+                  My IT Startup
                 </h4>
-                <p class="card-text text-center text-secondary">@seadmasetic</p>
+                <p class="card-text text-center text-secondary">
+                  Startup description
+                </p>
                 <div class="text-center mt-4">
-                  <a href="#" class="btn btn-outline-primary"
-                    ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
-                    friend</a
+                  <button
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-startup"
+                    class="btn btn-outline-primary"
                   >
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit startup
+                  </button>
                 </div>
               </div>
             </div>
@@ -269,17 +302,233 @@
               />
               <div class="card-body">
                 <h4 class="card-title text-center" style="color: #00396c">
-                  Sead Mašetić
+                  My IT Startup
                 </h4>
-                <p class="card-text text-center text-secondary">@seadmasetic</p>
+                <p class="card-text text-center text-secondary">
+                  Startup description
+                </p>
                 <div class="text-center mt-4">
-                  <a href="#" class="btn btn-outline-primary"
-                    ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
-                    friend</a
+                  <button
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-startup"
+                    class="btn btn-outline-primary"
                   >
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit startup
+                  </button>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="add-friend"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">Add friend</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure that you want to add
+              <span style="color: #00396c">Fikret Zajmović</span> as a friend?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-user-plus" aria-hidden="true"></i> Add friend
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-user-times" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="edit-startup"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">
+              Edit My IT startup
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="" method="">
+              <label for="startup-name" style="color: #00396c"
+                >Type in your startup name</label
+              >
+              <input type="text" class="form-control" name="startup-name" />
+
+              <label for="startup-name" class="mt-4" style="color: #00396c"
+                >Type in your startup description</label
+              >
+              <textarea
+                class="form-control"
+                placeholder="Type in your description"
+                style="height: 100px; resize: none"
+                name="startup-description"
+              ></textarea>
+
+              <label for="startup-name" class="mt-4" style="color: #00396c"
+                >Add an image</label
+              >
+              <input class="form-control" type="file" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-check" aria-hidden="true"></i> Confirm
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="create-startup"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">
+              Create new startup
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="" method="">
+              <label for="startup-name" style="color: #00396c"
+                >Type in your startup name</label
+              >
+              <input type="text" class="form-control" name="startup-name" />
+
+              <label for="startup-name" class="mt-4" style="color: #00396c"
+                >Type in your startup description</label
+              >
+              <textarea
+                class="form-control"
+                placeholder="Type in your description"
+                style="height: 100px; resize: none"
+                name="startup-description"
+              ></textarea>
+
+              <label for="startup-name" class="mt-4" style="color: #00396c"
+                >Add an image</label
+              >
+              <input class="form-control" type="file" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-plus" aria-hidden="true"></i> Create startup
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="edit-profile"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">Edit profile</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="" method="">
+              <label for="firstname" style="color: #00396c"
+                >Type in your name</label
+              >
+              <input type="text" class="form-control" name="firstname" />
+
+              <label class="mt-4" for="surname" style="color: #00396c"
+                >Type in your surname</label
+              >
+              <input type="text" class="form-control" name="surname" />
+
+              <label class="mt-4" for="username" style="color: #00396c"
+                >Type in username</label
+              >
+              <input type="text" class="form-control" name="username" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-check" aria-hidden="true"></i> Confirm
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
           </div>
         </div>
       </div>

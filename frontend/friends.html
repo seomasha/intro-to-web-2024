@@ -86,7 +86,7 @@
               <a
                 href=""
                 class="text-decoration-none btn btn-outline-danger justify-content-center"
-                >
+              >
                 <i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a
               >
             </div>
@@ -108,13 +108,15 @@
           />
           <h1 class="fs-4 mt-4">Sead Mašetić</h1>
           <h3 class="fs-6 text-secondary">@seadmasetic</h3>
-          <button class="btn btn-outline-primary mt-3">Go to my profile</button>
+          <a href="./myprofile.html" class="btn btn-outline-primary mt-3">Go to my profile</a>
         </div>
         <div
           class="col-xl-9 bg-white rounded-5 p-4 overflow-y-scroll"
           style="max-height: 300px"
         >
-          <h4 class="text-center" style="color: #00396c">Your friend requests</h4>
+          <h4 class="text-center" style="color: #00396c">
+            Your friend requests
+          </h4>
           <div
             class="d-flex p-2 friend rounded-pill mt-4 justify-content-between"
           >
@@ -197,7 +199,11 @@
               </h4>
               <p class="card-text text-center text-secondary">@seadmasetic</p>
               <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary"
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#add-friend"
                   ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
                   friend</a
                 >
@@ -216,7 +222,11 @@
               </h4>
               <p class="card-text text-center text-secondary">@seadmasetic</p>
               <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary"
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#add-friend"
                   ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
                   friend</a
                 >
@@ -235,12 +245,56 @@
               </h4>
               <p class="card-text text-center">@seadmasetic</p>
               <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary"
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#add-friend"
                   ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
                   friend</a
                 >
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="add-friend"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">Add friend</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure that you want to add
+              <span style="color: #00396c">Fikret Zajmović</span> as a friend?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-user-plus" aria-hidden="true"></i> Add friend
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-user-times" aria-hidden="true"></i> Cancel
+            </button>
           </div>
         </div>
       </div>
