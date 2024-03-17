@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBU Startup | Startups</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container">
+        <h1 class="navbar-brand fs-3" href="#">IBU <span> | </span> Startup</h1>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header border-bottom border-black">
+            <h1 class="offcanvas-title" id="offcanvasNavbarLabel">
+              IBU | Startup
+            </h1>
+            <button
+              type="button"
+              class="btn-close btn-dark"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link active mx-2"
+                  aria-current="page"
+                  href="./home.html"
+                  ><i class="fa fa-home" aria-hidden="true"></i> Home</a
+                >
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="./startup.html"
+                  ><i class="fa fa-briefcase" aria-hidden="true"></i>
+                  Startups</a
+                >
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="./friends.html"
+                  ><i class="fa fa-users" aria-hidden="true"></i> Friends</a
+                >
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="./notifications.html"
+                  ><i class="fa fa-bell" aria-hidden="true"></i>
+                  Notifications</a
+                >
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="./myprofile.html"
+                  ><i class="fa fa-user" aria-hidden="true"></i> My profile</a
+                >
+              </li>
+            </ul>
+            <div class="d-flex flex-column flex-lg-row gap-3 px-3">
+              <a
+                href=""
+                class="text-decoration-none btn btn-outline-danger justify-content-center"
+              >
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row p-4 gap-4">
+        <div class="col-xl-2 bg-white rounded-5 p-4" style="max-height: 200px">
+          <h6 class="text-center">Filters</h6>
+          <form action="" method="">
+            <input type="checkbox" name="IT" class="form-check-input" />
+            <label for="IT" class="form-check-label">IT</label>
+
+            <br />
+
+            <input type="checkbox" name="IT" class="form-check-input" />
+            <label for="IT" class="form-check-label">Marketing</label>
+
+            <br />
+
+            <input type="checkbox" name="IT" class="form-check-input" />
+            <label for="IT" class="form-check-label">Graphic design</label>
+          </form>
+          <div class="text-center mt-4">
+            <button class="btn btn-outline-primary">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i> Apply
+              filters
+            </button>
+          </div>
+        </div>
+        <div
+          class="col-xl-9 bg-white rounded-5 p-4 d-flex flex-wrap gap-4 justify-content-center"
+        >
+          <div class="card col-md-3" style="width: 15rem">
+            <img
+              src="../assets/postpic.jpeg"
+              class="card-img-top"
+              alt="startup-image"
+            />
+            <div class="card-body">
+              <h6 class="card-title text-center" style="color: #00396c">
+                My IT Startup - Sead Mašetić
+              </h6>
+              <p class="card-text text-center">
+                Here you will add a quick description for your startup.
+              </p>
+              <div class="text-center">
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#apply-startup"
+                  ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card col-md-3" style="width: 15rem">
+            <img
+              src="../assets/postpic.jpeg"
+              class="card-img-top"
+              alt="startup-image"
+            />
+            <div class="card-body">
+              <h6 class="card-title text-center" style="color: #00396c">
+                My IT Startup - Sead Mašetić
+              </h6>
+              <p class="card-text text-center">
+                Here you will add a quick description for your startup.
+              </p>
+              <div class="text-center">
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#apply-startup"
+                  ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card col-md-3" style="width: 15rem">
+            <img
+              src="../assets/postpic.jpeg"
+              class="card-img-top"
+              alt="startup-image"
+            />
+            <div class="card-body">
+              <h6 class="card-title text-center" style="color: #00396c">
+                My IT Startup - Sead Mašetić
+              </h6>
+              <p class="card-text text-center">
+                Here you will add a quick description for your startup.
+              </p>
+              <div class="text-center">
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#apply-startup"
+                  ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card col-md-3" style="width: 15rem">
+            <img
+              src="../assets/postpic.jpeg"
+              class="card-img-top"
+              alt="startup-image"
+            />
+            <div class="card-body">
+              <h6 class="card-title text-center" style="color: #00396c">
+                My IT Startup - Sead Mašetić
+              </h6>
+              <p class="card-text text-center">
+                Here you will add a quick description for your startup.
+              </p>
+              <div class="text-center">
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#apply-startup"
+                  ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="apply-startup"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">
+              Apply for startup
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure that you want to apply for
+              <span style="color: #00396c">IT Startup</span>?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">
+              <i class="fa fa-plus" aria-hidden="true"></i> Apply
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://use.fontawesome.com/0ed2d2b93d.js"></script>
+  </body>
+</html>

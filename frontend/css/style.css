@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+
+nav .container h1 {
+  color: #00396C;
+}
+
+nav .container span {
+  color: #E8E87C;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  opacity: 0;
+  transition: all 0.2s;
+  height: 2px;
+  width: 100%;
+  background-color: #00396C;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+}
+
+.nav-link a:hover {
+  color: #00396C;
+}
+
+.comment, .friend {
+  background-color: #FAFAFA;
+}/*# sourceMappingURL=home.css.map */
