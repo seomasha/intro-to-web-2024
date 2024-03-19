@@ -1,0 +1,45 @@
+[
+  {
+    "id": 0,
+    "founder": "Sead Masetic",
+    "name": "Burch University",
+    "category": "IT",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+    "image": "/spapp/frontend/assets/postpic.jpeg",
+    "members": [
+      {
+        "id": 0,
+        "name": "Sead Masetic"
+      },
+
+      {
+        "id": 1,
+        "name": "Dario Coric"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "founder": "Selima Kursuzajmocoric",
+    "name": "Penthouse",
+    "category": "Digital marketing",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+    "image": "/spapp/frontend/assets/postpic.jpeg",
+    "members": [
+      {
+        "id": 0,
+        "name": "Alen Kursumlija"
+      },
+
+      {
+        "id": 1,
+        "name": "Selim Ganovic"
+      },
+
+      {
+        "id": 2,
+        "name": "Ekrem Ganovic"
+      }
+    ]
+  }
+]

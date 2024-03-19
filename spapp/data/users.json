@@ -1,0 +1,77 @@
+[
+  {
+    "id": 0,
+    "name": "Sead Masetic",
+    "username": "seadmasetic",
+    "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "friends": [
+      {
+        "id": 0,
+        "name": "Alen Kursumlija"
+      },
+
+      {
+        "id": 1,
+        "name": "Nermin Zajmovic"
+      }
+    ],
+    "startups": [
+      {
+        "id": 0,
+        "name": "Burch University",
+        "category": "IT",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+        "image": "/spapp/frontend/assets/postpic.jpeg",
+        "members": [
+          {
+            "id": 0,
+            "name": "Sead Masetic"
+          },
+
+          {
+            "id": 1,
+            "name": "Dario Coric"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 1,
+    "name": "Sead Masetic",
+    "username": "seadmasetic",
+    "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "friends": [
+      {
+        "id": 0,
+        "name": "Alen Kursumlija"
+      },
+
+      {
+        "id": 1,
+        "name": "Nermin Zajmovic"
+      }
+    ],
+    "startups": [
+      {
+        "id": 0,
+        "name": "Burch University",
+        "category": "IT",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+        "image": "/spapp/frontend/assets/postpic.jpeg",
+        "members": [
+          {
+            "id": 0,
+            "name": "Sead Masetic"
+          },
+
+          {
+            "id": 1,
+            "name": "Dario Coric"
+          }
+        ]
+      }
+    ]
+  }
+]
