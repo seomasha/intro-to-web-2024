@@ -1,0 +1,49 @@
+[
+  {
+    "id": 0,
+    "name": "Sead Mašetić",
+    "username": "seadmasetic",
+    "profilepicture": "/spapp/frontend/assets/profilepic.jpg",
+    "positiondescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+    "positionpicture": "",
+    "likecount": 15,
+    "commentcount": 0,
+    "applycount": 5,
+    "comments": []
+  },
+
+  {
+    "id": 1,
+    "name": "Aca Lukas",
+    "username": "acalukas",
+    "profilepicture": "/spapp/frontend/assets/aca.webp",
+    "positiondescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+    "positionpicture": "/spapp/frontend/assets/postpic.jpeg",
+    "likecount": 644,
+    "commentcount": 4,
+    "applycount": 290,
+    "comments": [
+        {
+            "id": 0,
+            "n": "Seadame Mašetić",
+            "username": "seadmasetic",
+            "profilepicture": "/spapp/frontend/assets/profilepic.jpg",
+            "comment": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?"
+        },
+        {
+            "id": 1,
+            "name": "Sead Mašetić",
+            "username": "seadmasetic",
+            "profilepicture": "/spapp/frontend/assets/profilepic.jpg",
+            "comment": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?"
+        },
+        {
+            "id": 2,
+            "name": "Sead Mašetić",
+            "username": "seadmasetic",
+            "profilepicture": "/spapp/frontend/assets/profilepic.jpg",
+            "comment": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?"
+        }
+    ]
+  }
+]
