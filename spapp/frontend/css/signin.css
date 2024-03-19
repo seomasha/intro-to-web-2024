@@ -14,7 +14,7 @@ span {
 }
 
 .signin {
-  background-color: #FAFAFA;
+  background-color: white;
   width: 500px;
   height: 600px;
   margin: auto;
@@ -51,4 +51,4 @@ span {
 }
 .signin .links a:hover {
   color: #00396C;
-}/*# sourceMappingURL=signin.css.map */
+}

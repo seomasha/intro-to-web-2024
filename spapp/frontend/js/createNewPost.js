@@ -19,7 +19,7 @@ createPost.addEventListener("click", () => {
         <div class="justify-content-start">
             <div class="gap-2 d-flex">
             <img
-                src="../assets/profilepic.jpg"
+                src="/spapp/frontend/assets/profilepic.jpg"
                 class="rounded-5 rounded-circle"
                 style="width: 50px; height: 50px; background-size: cover"
             />

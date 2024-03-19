@@ -4,22 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IBU Startup | Home</title>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="/font-awesome-4.7.0/css/font-awesome.min.css"
-    />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-white border fixed-top">
+    <nav
+      class="navbar navbar-expand-lg bg-white border fixed-top"
+      role="navigation"
+    >
       <div class="container">
         <h1 class="navbar-brand fs-3 fw-bold" href="#">
           IBU <span> | </span> Startup
@@ -54,39 +44,36 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a
-                  class="nav-link active mx-2"
-                  aria-current="page"
-                  href="./home.html"
+                <a class="nav-link active mx-2" aria-current="page" href="#home"
                   ><i class="fa fa-home" aria-hidden="true"></i> Home</a
                 >
               </li>
               <li class="nav-item mx-2">
-                <a class="nav-link" href="./startup.html"
+                <a class="nav-link" href="#startup"
                   ><i class="fa fa-briefcase" aria-hidden="true"></i>
                   Startups</a
                 >
               </li>
               <li class="nav-item mx-2">
-                <a class="nav-link" href="./friends.html"
+                <a class="nav-link" href="#friends"
                   ><i class="fa fa-users" aria-hidden="true"></i> Friends</a
                 >
               </li>
               <li class="nav-item mx-2">
-                <a class="nav-link" href="./notifications.html"
+                <a class="nav-link" href="#notifications"
                   ><i class="fa fa-bell" aria-hidden="true"></i>
                   Notifications</a
                 >
               </li>
               <li class="nav-item mx-2">
-                <a class="nav-link" href="./myprofile.html"
+                <a class="nav-link" href="#myprofile"
                   ><i class="fa fa-user" aria-hidden="true"></i> My profile</a
                 >
               </li>
             </ul>
             <div class="d-flex flex-column flex-lg-row gap-3 px-3">
               <a
-                href=""
+                href="#signin"
                 class="text-decoration-none btn btn-outline-danger justify-content-center"
               >
                 <i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a
@@ -104,13 +91,13 @@
           style="max-height: 300px"
         >
           <img
-            src="../assets/profilepic.jpg"
+            src="/spapp/frontend/assets/profilepic.jpg"
             class="rounded-5 rounded-circle"
             style="width: 100px; height: 100px; background-size: cover"
           />
           <h1 class="fs-4 mt-4">Sead Mašetić</h1>
           <h3 class="fs-6 text-secondary">@seadmasetic</h3>
-          <a href="./myprofile.html" class="btn btn-outline-primary mt-3"
+          <a href="#myprofile" class="btn btn-outline-primary mt-3"
             >Go to my profile</a
           >
         </div>
@@ -118,7 +105,7 @@
           <div class="bg-white rounded-5 border">
             <div class="d-flex p-4 gap-2">
               <img
-                src="../assets/profilepic.jpg"
+                src="/spapp/frontend/assets/profilepic.jpg"
                 class="rounded-5 rounded-circle"
                 style="width: 50px; height: 50px; background-size: cover"
               />
@@ -128,7 +115,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#create-startup"
               >
-                Click here to create a new post!
+                Click here to create a new position!
               </button>
             </div>
           </div>
@@ -137,7 +124,7 @@
             <div class="justify-content-start">
               <div class="gap-2 d-flex">
                 <img
-                  src="../assets/profilepic.jpg"
+                  src="/spapp/frontend/assets/profilepic.jpg"
                   class="rounded-5 rounded-circle"
                   style="width: 50px; height: 50px; background-size: cover"
                 />
@@ -180,8 +167,7 @@
               </div>
             </div>
             <hr />
-            <div id="commentSection">
-            </div>
+            <div id="commentSection"></div>
             <div class="d-flex justify-content-evenly">
               <button class="btn btn-outline-primary">
                 <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like
@@ -207,7 +193,7 @@
             <div class="justify-content-start">
               <div class="gap-2 d-flex">
                 <img
-                  src="../assets/profilepic.jpg"
+                  src="/spapp/frontend/assets/profilepic.jpg"
                   class="rounded-5 rounded-circle"
                   style="width: 50px; height: 50px; background-size: cover"
                 />
@@ -227,7 +213,7 @@
               omnis consequuntur porro rem itaque eum?
             </h6>
             <img
-              src="../assets/postpic.jpeg"
+              src="/spapp/frontend/assets/postpic.jpeg"
               class="img-thumbnail mt-4"
               style="width: auto"
             />
@@ -255,7 +241,7 @@
             <hr />
             <div class="d-flex gap-2 my-4">
               <img
-                src="../assets/profilepic.jpg"
+                src="/spapp/frontend/assets/profilepic.jpg"
                 class="rounded-5 rounded-circle"
                 style="width: 50px; height: 50px; background-size: cover"
               />
@@ -304,7 +290,7 @@
           >
             <div class="d-flex gap-2">
               <img
-                src="../assets/profilepic.jpg"
+                src="/spapp/frontend/assets/profilepic.jpg"
                 class="rounded-5 rounded-circle"
                 style="width: 50px; height: 50px; background-size: cover"
               />
@@ -327,7 +313,7 @@
           >
             <div class="d-flex gap-2">
               <img
-                src="../assets/profilepic.jpg"
+                src="/spapp/frontend/assets/profilepic.jpg"
                 class="rounded-5 rounded-circle"
                 style="width: 50px; height: 50px; background-size: cover"
               />
@@ -350,7 +336,7 @@
           >
             <div class="d-flex gap-2">
               <img
-                src="../assets/profilepic.jpg"
+                src="/spapp/frontend/assets/profilepic.jpg"
                 class="rounded-5 rounded-circle"
                 style="width: 50px; height: 50px; background-size: cover"
               />
@@ -368,7 +354,7 @@
               </button>
             </div>
           </div>
-          <a href="./friends.html" class="btn btn-outline-primary my-4"
+          <a href="#friends" class="btn btn-outline-primary my-4"
             >Discover more</a
           >
         </div>
@@ -400,7 +386,12 @@
             </p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="alert"
+              data-bs-target="#my-alert"
+            >
               <i class="fa fa-user-plus" aria-hidden="true"></i> Add friend
             </button>
             <button
@@ -426,7 +417,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" style="color: #00396c">
-              Create new post
+              Create a new position
             </h5>
             <button
               type="button"
@@ -438,7 +429,7 @@
           <div class="modal-body">
             <form action="" method="">
               <label for="post-description" style="color: #00396c"
-                >Type in your post description</label
+                >Type in your position description</label
               >
               <textarea
                 class="form-control"
@@ -451,12 +442,17 @@
               <label for="post-image" class="mt-4" style="color: #00396c"
                 >Add an image</label
               >
-              <input class="form-control" type="file" accept="image/*" id="postImage"/>
+              <input
+                class="form-control"
+                type="file"
+                accept="image/*"
+                id="postImage"
+              />
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" id="createPost">
-              <i class="fa fa-plus" aria-hidden="true"></i> Create post
+              <i class="fa fa-plus" aria-hidden="true"></i> Create position
             </button>
             <button
               type="button"
@@ -558,14 +554,9 @@
         </div>
       </div>
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://use.fontawesome.com/0ed2d2b93d.js"></script>
-    <script src="../js/addComment.js"></script>
-    <script src="../js/createNewPost.js"></script>
   </body>
+
+  <script src="/spapp/frontend/js/addComment.js"></script>
+  <script src="/spapp/frontend/js/createNewPost.js"></script>
+
 </html>

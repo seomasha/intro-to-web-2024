@@ -8,7 +8,7 @@ addCommentButton.addEventListener("click", () => {
   const html = `
   <div class="d-flex gap-2 my-4" id="commentSection">
         <img
-        src="../assets/profilepic.jpg"
+        src="/spapp/frontend/assets/profilepic.jpg"
         class="rounded-5 rounded-circle"
         style="width: 50px; height: 50px; background-size: cover"
         />
