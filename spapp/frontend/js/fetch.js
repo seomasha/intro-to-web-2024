@@ -73,6 +73,7 @@ getPositions = () => {
                 </div>
             </div>
             </div>
+            <h6 class="text-primary">${position.positionname}</h6>
             <h6 class="text-start mt-4 mb-8 fs-6 fw-light">
                 ${position.positiondescription}
             </h6>
@@ -109,6 +110,7 @@ getPositions = () => {
                 class="btn btn-outline-primary"
                 data-bs-toggle="modal"
                 data-bs-target="#add-comment"
+                id="commentBtn-${position.id}
             >
                 <i class="fa fa-comment" aria-hidden="true"></i> Comment
             </button>
@@ -124,7 +126,7 @@ getPositions = () => {
         <br>
         `;
       });
-      document.getElementById("postSection").innerHTML = html;
+      document.getElementById("positionSection").innerHTML = html;
     })
     .catch((error) => {
       console.log(error);
