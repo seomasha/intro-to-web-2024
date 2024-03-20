@@ -264,6 +264,48 @@
       </div>
     </div>
 
+    <div
+      class="modal fade"
+      id="apply-position"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">
+              Apply for position
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure that you want to apply for
+              <span style="color: #00396c">IT Startup position</span>?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="applyPosition" data-bs-dismiss="modal">
+              <i class="fa fa-plus" aria-hidden="true"></i> Apply
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Edit startup-->
 
     <div
@@ -395,12 +437,7 @@
       </div>
     </div>
 
-    <div id="friendAlert" class="alert alert-primary d-none sticky-top col-xl-4 container fixed-bottom mb-4" role="alert">
-      You have sent a friend request to <strong>Fikret Zajmović</strong>
-    </div>
-
-    <div id="applyAlert" class="alert alert-primary d-none sticky-top col-xl-4 container sticky-bottom mb-4" role="alert">
-      You have applied for <strong>IT Startup</strong>
+    <div id="alert" class="alert alert-primary d-none sticky-top col-xl-4 container fixed-bottom mb-4" role="alert">
     </div>
 
     <script src="./frontend/js/jquery.spapp.js"></script>
