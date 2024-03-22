@@ -98,84 +98,19 @@
             style="width: 100px; height: 100px; background-size: cover"
           />
           <h1 class="fs-4 mt-4">Sead Mašetić</h1>
-          <h3 class="fs-6 text-secondary">@seadmasetic</h3>
+          <h3 class="fs-6 text-secondary fw-light">@seadmasetic</h3>
           <a href="#myprofile" class="btn btn-outline-primary mt-3"
-            >Go to my profile</a
+            >My profile</a
           >
         </div>
         <div
           class="col-xl-9 bg-white rounded-5 p-4 overflow-y-scroll border"
           style="max-height: 300px"
         >
-          <h4 class="text-center" style="color: #00396c">
+          <h4 class="text-center" style="color: #00396c" id="requestsSection">
             Your friend requests
           </h4>
-          <div
-            class="d-flex p-2 friend rounded-pill mt-4 justify-content-between border"
-          >
-            <div class="d-flex gap-2">
-              <img
-                src="/spapp/frontend/assets/profilepic.jpg"
-                class="rounded-5 rounded-circle"
-                style="width: 50px; height: 50px; background-size: cover"
-              />
-              <h6 class="my-auto" style="font-size: 14px; color: #00396c">
-                Alen Kuršumlija
-              </h6>
-            </div>
-            <div class="my-auto p-2">
-              <button class="btn btn-outline-primary">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </button>
-              <button class="btn btn-outline-danger">
-                <i class="fa fa-ban" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="d-flex p-2 friend rounded-pill mt-4 justify-content-between border"
-          >
-            <div class="d-flex gap-2">
-              <img
-                src="/spapp/frontend/assets/profilepic.jpg"
-                class="rounded-5 rounded-circle"
-                style="width: 50px; height: 50px; background-size: cover"
-              />
-              <h6 class="my-auto" style="font-size: 14px; color: #00396c">
-                Dario Ćorić
-              </h6>
-            </div>
-            <div class="my-auto p-2">
-              <button class="btn btn-outline-primary">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </button>
-              <button class="btn btn-outline-danger">
-                <i class="fa fa-ban" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="d-flex p-2 friend rounded-pill mt-4 justify-content-between border"
-          >
-            <div class="d-flex gap-2">
-              <img
-                src="/spapp/frontend/assets/profilepic.jpg"
-                class="rounded-5 rounded-circle"
-                style="width: 50px; height: 50px; background-size: cover"
-              />
-              <h6 class="my-auto" style="font-size: 14px; color: #00396c">
-                Selim Ganović
-              </h6>
-            </div>
-            <div class="my-auto p-2">
-              <button class="btn btn-outline-primary">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </button>
-              <button class="btn btn-outline-danger">
-                <i class="fa fa-ban" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
+          
         </div>
         <div
           class="col-xl-11 bg-white rounded-5 p-4 d-flex flex-wrap gap-4 justify-content-center border"
@@ -190,7 +125,7 @@
               <h4 class="card-title text-center" style="color: #00396c">
                 Sead Mašetić
               </h4>
-              <p class="card-text text-center text-secondary">@seadmasetic</p>
+              <p class="card-text text-center text-secondary fw-light">@seadmasetic</p>
               <div class="text-center mt-4">
                 <a
                   href="#"
@@ -213,7 +148,7 @@
               <h4 class="card-title text-center" style="color: #00396c">
                 Sead Mašetić
               </h4>
-              <p class="card-text text-center text-secondary">@seadmasetic</p>
+              <p class="card-text text-center text-secondary fw-light">@seadmasetic</p>
               <div class="text-center mt-4">
                 <a
                   href="#"
@@ -236,7 +171,7 @@
               <h4 class="card-title text-center" style="color: #00396c">
                 Sead Mašetić
               </h4>
-              <p class="card-text text-center">@seadmasetic</p>
+              <p class="card-text text-center text-secondary fw-light">@seadmasetic</p>
               <div class="text-center mt-4">
                 <a
                   href="#"
@@ -253,4 +188,7 @@
       </div>
     </div>
   </body>
+
+  <script src="/spapp/frontend/js/fetch.js"></script>
+  <script src="/spapp/frontend/js/alert.js"></script>
 </html>

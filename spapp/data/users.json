@@ -25,32 +25,48 @@
         "members": [
           {
             "id": 0,
-            "name": "Sead Masetic"
+            "name": "Sead Masetic",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
           },
 
           {
             "id": 1,
-            "name": "Dario Coric"
+            "name": "Dario Coric",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
           }
         ]
+      }
+    ],
+    "friendRequests": [
+      {
+        "id": 0,
+        "name": "Fikret Zajmovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Ifeta Panj",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
       }
     ]
   },
 
   {
     "id": 1,
-    "name": "Sead Masetic",
+    "name": "Dario Coric",
     "username": "seadmasetic",
     "profilepic": "/spapp/frontend/assets/profilepic.jpg",
     "friends": [
       {
         "id": 0,
-        "name": "Alen Kursumlija"
+        "name": "Alen Kursumlija",
+        "image": "/spapp/frontend/assets/postpic.jpeg"
       },
 
       {
         "id": 1,
-        "name": "Nermin Zajmovic"
+        "name": "Nermin Zajmovic",
+        "image": "/spapp/frontend/assets/postpic.jpeg"
       }
     ],
     "startups": [
@@ -63,12 +79,14 @@
         "members": [
           {
             "id": 0,
-            "name": "Sead Masetic"
+            "name": "Sead Masetic",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
           },
 
           {
             "id": 1,
-            "name": "Dario Coric"
+            "name": "Dario Coric",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
           }
         ]
       }
