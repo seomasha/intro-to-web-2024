@@ -148,7 +148,7 @@ getPositions = () => {
                   data-bs-target="#add-comment"
                   id="commentBtn-${position.id}
               >
-                  <i class="fa fa-comment" aria-hidden="true"></i> Comment
+                  <i class="fa fa-thumbs-up" aria-hidden="true "></i> Comment
               </button>
               <button
                   class="btn btn-outline-primary"
@@ -189,6 +189,8 @@ getInvestors = () => {
           </p>
           <div class="text-center">
               <a class="btn btn-outline-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#apply-investor"
               ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
               >
           </div>
@@ -237,7 +239,7 @@ getNotifications = () => {
   });
 };
 
-getFriends = () => {
+getFriendsRequests = () => {
   $.get("./data/users.json", (data) => {
     let html = ``;
 
@@ -268,15 +270,94 @@ getFriends = () => {
           </div>
         </div>
           `;
-        })
+        });
       }
     });
-    $("#requestsSection").html(html)
+    $("#requestsSection").html(html);
   });
 };
 
-getFriends();
+getFriendsRequestsProfile = () => {
+  $.get("./data/users.json", (data) => {
+    let html = ``;
+
+    console.log(data);
+
+    $.each(data, (index, user) => {
+      if (user.name === "Sead Masetic") {
+        $.each(user.friends, (index, friend) => {
+          html += `
+          <div
+          class="d-flex p-2 friend rounded-pill mt-4 justify-content-between border" id="#request-${friend.id}"
+          >
+          <div class="d-flex gap-2">
+            <img
+              src=${friend.image}
+              class="rounded-5 rounded-circle"
+              style="width: 50px; height: 50px; background-size: cover"
+            />
+            <h6 class="my-auto" style="font-size: 14px; color: #00396c">
+              ${friend.name}
+            </h6>
+          </div>
+          <div class="my-auto p-2">
+            <button class="btn btn-outline-danger">
+              <i class="fa fa-user-times" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+          `;
+        });
+      }
+    });
+    $("#requestsProfileSection").html(html);
+  });
+};
+
+getStartupsProfile = () => {
+  $.get("./data/users.json", (data) => {
+    let html = ``;
+
+    $.each(data, (index, user) => {
+      if (user.name === "Sead Masetic") {
+        $.each(user.startups, (index, startup) => {
+          html += `
+          <div class="card col-md-3" style="width: 15rem" id="startup-${startup.id}">
+          <img
+            src=${startup.image}
+            class="card-img-top"
+            alt="startup-image"
+          />
+          <div class="card-body">
+            <h6 class="card-title text-center" style="color: #00396c">
+              ${startup.name} <br> <span class="fw-light text-primary">${startup.founder}</span>
+            </h6>
+            <p class="card-text text-center fw-light">
+              ${startup.category}
+            </p>
+            <div class="text-center">
+              <a
+                href="#"
+                class="btn btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#edit-startup"
+                ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a
+              >
+            </div>
+          </div>
+        </div>
+          `;
+        });
+      }
+    });
+    $("#startupProfileSection").html(html);
+  });
+};
+
+getFriendsRequests();
+getFriendsRequestsProfile();
 getStartups();
+getStartupsProfile();
 getNotifications();
 getInvestors();
 getPositions();

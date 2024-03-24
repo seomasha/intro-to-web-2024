@@ -1,7 +1,6 @@
 addComment = () => {
 
 }
-
 const addCommentButton = document.getElementById("addComment");
 const comment = document.getElementById("comment");
 const commentSection = document.getElementById("commentSection");
@@ -31,3 +30,4 @@ addCommentButton.addEventListener("click", () => {
 
   commentSection.innerHTML += html;
 });
+

@@ -1,15 +1,12 @@
 createPosition = () => {
-  const positionName = document.getElementById("positionName").value;
-  const positionDescription = document.getElementById(
-    "positionDescription"
-  ).value;
-  const positionImage = document.getElementById("positionImage").files[0];
+  const positionName = $("#positionName").val();
+  const positionDescription = $("#positionDescription").val();
+  const positionImage = $("#positionImage")[0].files[0];
 
-  let image = ""; // Initialize image variable
+  let image = "";
 
   if (positionImage) {
     const reader = new FileReader();
-    reader.readAsDataURL(positionImage);
 
     reader.onload = function () {
       image = `<img src="${reader.result}" alt="" class="img-thumbnail mt-4" style="width: auto" />`;
@@ -50,8 +47,10 @@ createPosition = () => {
           </div>
           <br>`;
 
-      document.getElementById("positionSection").innerHTML += html;
+      $("#positionSection").append(html);
     };
+
+    reader.readAsDataURL(positionImage);
   } else {
     let html = `
         <div class="bg-white rounded-5 p-4 border">
@@ -90,10 +89,8 @@ createPosition = () => {
         </div>
         <br>`;
 
-    document.getElementById("positionSection").innerHTML += html;
+    $("#positionSection").append(html);
   }
 };
 
-document
-  .getElementById("createPosition")
-  .addEventListener("click", createPosition);
+$("#createPosition").on("click", createPosition);

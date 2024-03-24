@@ -1,18 +1,12 @@
-const nameInput = document.getElementById("nameInput");
-const usernameInput = document.getElementById("usernameInput");
-const imageInput = document.getElementById("imageInput").files[0];
-
-document.getElementById("editButton").addEventListener("click", () => {
-  document.getElementById("name").innerText = nameInput.value;
-  document.getElementById("username").innerText = "@" + usernameInput.value;
+$("#editButton").on("click", function() {
+  $("#name").text($("#nameInput").val());
+  $("#username").text("@" + $("#usernameInput").val());
 
   const reader = new FileReader();
 
-  reader.onload = (e) => {
-    const profileImage = e.target.result;
-
-    document.getElementById("image").setAttribute("src", profileImage);
+  reader.onload = function(e) {
+    $("#image").attr("src", e.target.result);
   };
 
-  //reader.readAsDataURL(imageInput);
+  reader.readAsDataURL($("#imageInput")[0].files[0]);
 });

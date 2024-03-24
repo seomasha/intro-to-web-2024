@@ -174,9 +174,12 @@
     </div>
 
     <!--Add comment-->
+
+    <!--Create startup-->
+
     <div
       class="modal fade"
-      id="add-comment"
+      id="create-startup"
       aria-hidden="true"
       tabindex="-1"
       aria-labelledby="modal-title"
@@ -184,7 +187,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" style="color: #00396c">Add comment</h5>
+            <h5 class="modal-title" style="color: #00396c">Create startup</h5>
             <button
               type="button"
               class="btn-close"
@@ -194,20 +197,59 @@
           </div>
           <div class="modal-body">
             <form action="" method="">
+              <label for="startup-name" style="color: #00396c">
+                Startup name
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                name="startup-name"
+                id="startup-name"
+              />
+              <br />
               <label for="startup-name" style="color: #00396c"
-                >Add your comment</label
+                >Add the description</label
               >
               <textarea
                 class="form-control"
                 style="height: 100px; resize: none"
                 name="startup-description"
-                id="comment"
+                id="description"
               ></textarea>
+
+              <label for="startup-image" class="mt-4" style="color: #00396c"
+                >Add an image</label
+              >
+              <input
+                class="form-control"
+                type="file"
+                accept="image/*"
+                id="startupImage"
+              />
+
+              <label for="startupMembers" class="mt-4" style="color: #00396c"
+                >Add the members (Separate by semicolon ;)</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                id="startupMembers"
+                name="startupMembers"
+              />
+
+              <label for="startupCategory" class="mt-4" style="color: #00396c"
+                >What is the category?</label
+              >
+              <select class="form-control">
+                <option>IT</option>
+                <option>Graphic Design</option>
+                <option>Digital Marketing</option>
+              </select>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" id="addComment">
-              <i class="fa fa-plus" aria-hidden="true"></i> Add comment
+              <i class="fa fa-plus" aria-hidden="true"></i> Create startup
             </button>
             <button
               type="button"
@@ -249,7 +291,57 @@
             </p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="applyStartup" data-bs-dismiss="modal">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="applyStartup"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-plus" aria-hidden="true"></i> Apply
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="apply-investor"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">
+              Apply for investor
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3 style="color: #00396c" id="investorName"></h3>
+            <h5 id="investorCategory"></h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="applyStartup"
+              data-bs-dismiss="modal"
+            >
               <i class="fa fa-plus" aria-hidden="true"></i> Apply
             </button>
             <button
@@ -291,7 +383,12 @@
             </p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="applyPosition" data-bs-dismiss="modal">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="applyPosition"
+              data-bs-dismiss="modal"
+            >
               <i class="fa fa-plus" aria-hidden="true"></i> Apply
             </button>
             <button
@@ -330,25 +427,54 @@
           </div>
           <div class="modal-body">
             <form action="" method="">
+              <label for="startup-name" style="color: #00396c">
+                Startup name
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                name="startup-name"
+                id="startup-name"
+              />
+              <br />
               <label for="startup-name" style="color: #00396c"
-                >Type in your startup name</label
-              >
-              <input type="text" class="form-control" name="startup-name" />
-
-              <label for="startup-name" class="mt-4" style="color: #00396c"
-                >Type in your startup description</label
+                >Edit the description</label
               >
               <textarea
                 class="form-control"
-                placeholder="Type in your description"
                 style="height: 100px; resize: none"
                 name="startup-description"
+                id="description"
               ></textarea>
 
-              <label for="startup-name" class="mt-4" style="color: #00396c"
-                >Add an image</label
+              <label for="startup-image" class="mt-4" style="color: #00396c"
+                >Edit the image</label
               >
-              <input class="form-control" type="file" />
+              <input
+                class="form-control"
+                type="file"
+                accept="image/*"
+                id="startupImage"
+              />
+
+              <label for="startupMembers" class="mt-4" style="color: #00396c"
+                >Edit the members (Separate by semicolon ;)</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                id="startupMembers"
+                name="startupMembers"
+              />
+
+              <label for="startupCategory" class="mt-4" style="color: #00396c"
+                >What is the category?</label
+              >
+              <select class="form-control">
+                <option>IT</option>
+                <option>Graphic Design</option>
+                <option>Digital Marketing</option>
+              </select>
             </form>
           </div>
           <div class="modal-footer">
@@ -437,8 +563,11 @@
       </div>
     </div>
 
-    <div id="alert" class="alert alert-primary d-none sticky-top col-xl-4 container fixed-bottom mb-4" role="alert">
-    </div>
+    <div
+      id="alert"
+      class="alert alert-primary d-none sticky-top col-xl-4 container fixed-bottom mb-4"
+      role="alert"
+    ></div>
 
     <script src="./frontend/js/jquery.spapp.js"></script>
     <script src="./frontend/js/jquery.spapp.min.js"></script>

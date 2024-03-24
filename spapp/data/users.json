@@ -7,18 +7,21 @@
     "friends": [
       {
         "id": 0,
-        "name": "Alen Kursumlija"
+        "name": "Alen Kursumlija",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
       },
 
       {
         "id": 1,
-        "name": "Nermin Zajmovic"
+        "name": "Nermin Zajmovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
       }
     ],
     "startups": [
       {
         "id": 0,
         "name": "Burch University",
+        "founder": "Sead Masetic",
         "category": "IT",
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
         "image": "/spapp/frontend/assets/postpic.jpeg",
@@ -89,6 +92,18 @@
             "image": "/spapp/frontend/assets/postpic.jpeg"
           }
         ]
+      }
+    ],
+    "friendRequests": [
+      {
+        "id": 0,
+        "name": "Fikret Zajmovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Ifeta Panj",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
       }
     ]
   }
