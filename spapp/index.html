@@ -289,15 +289,15 @@
               <label for="startupCategory" class="mt-4" style="color: #00396c"
                 >What is the category?</label
               >
-              <select class="form-control">
-                <option name="">IT</option>
-                <option name="">Graphic Design</option>
-                <option name="">Digital Marketing</option>
+              <select class="form-control" id="startupCategory">
+                <option value="IT">IT</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Digital Marketing">Digital Marketing</option>
               </select>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="addStartup">
+            <button type="button" class="btn btn-primary" id="addStartup" data-bs-dismiss="modal">
               <i class="fa fa-plus" aria-hidden="true"></i> Create startup
             </button>
             <button
@@ -654,7 +654,7 @@
           <img
             src=""
             id="toastImage"
-            class="rounded mr-1"
+            class="rounded mr-3"
             alt="Success"
             height="25"
             width="25"

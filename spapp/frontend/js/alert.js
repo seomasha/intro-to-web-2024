@@ -143,7 +143,7 @@ declineFriendRequest = (userID, requestID) => {
   $.get("./data/users.json", (data) => {
     $.each(data, (index, user) => {
       if (user.id === userID) {
-        $.each(user.friendRequests, (index, request) => {
+        $.each(user.friends, (index, request) => {
           if (request.id === requestID) {
             requestName = request.name;
 
