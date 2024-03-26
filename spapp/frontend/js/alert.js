@@ -137,6 +137,46 @@ acceptFriendRequest = (userID, requestID) => {
   });
 };
 
+declineFriendRequest = (userID, requestID) => {
+  let requestName = "";
+
+  $.get("./data/users.json", (data) => {
+    $.each(data, (index, user) => {
+      if (user.id === userID) {
+        $.each(user.friendRequests, (index, request) => {
+          if (request.id === requestID) {
+            requestName = request.name;
+
+            $(`#declineFriend-${requestID}`).click(() => {
+              const toastTitle = $("#toastTitle");
+              const toastBody = $("#toastBody");
+              const toastImage = $("#toastImage");
+
+              toastTitle.text("Decline friend request!");
+              toastBody.text(`You declined ${requestName}!`);
+              toastImage.attr("src", "./frontend/assets/decline.gif");
+
+              $("#toast").toast("show");
+            });
+
+            $(`#removeFriend-${requestID}`).click(() => {
+              const toastTitle = $("#toastTitle");
+              const toastBody = $("#toastBody");
+              const toastImage = $("#toastImage");
+
+              toastTitle.text("Removed friend!");
+              toastBody.text(`You removed ${requestName} from your friend list!`);
+              toastImage.attr("src", "./frontend/assets/decline.gif");
+
+              $("#toast").toast("show");
+            });
+          }
+        });
+      }
+    });
+  });
+};
+
 clearStartup = () => {
   $("ul#startupMembers").empty();
 };

@@ -147,6 +147,7 @@ getPositions = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#add-comment"
                   id="commentBtn-${position.id}
+                  onclick="addComment(${position.id})"
               >
                   <i class="fa fa-thumbs-up" aria-hidden="true "></i> Comment
               </button>
@@ -266,7 +267,7 @@ getFriendsRequests = () => {
             <button class="btn btn-outline-primary" id="acceptFriend-${request.id}" onclick="acceptFriendRequest(${user.id}, ${request.id})">
               <i class="fa fa-check" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-outline-danger">
+            <button class="btn btn-outline-danger" id="declineFriend-${request.id}" onclick="declineFriendRequest(${user.id}, ${request.id})">
               <i class="fa fa-ban" aria-hidden="true"></i>
             </button>
           </div>
@@ -301,7 +302,7 @@ getFriendsRequestsProfile = () => {
             </h6>
           </div>
           <div class="my-auto p-2">
-            <button class="btn btn-outline-danger">
+            <button class="btn btn-outline-danger" id="removeFriend-${friend.id}" onclick="declineFriendRequest(${user.id}, ${friend.id})">
               <i class="fa fa-user-times" aria-hidden="true"></i>
             </button>
           </div>
@@ -425,6 +426,7 @@ getSuggestedFriends = () => {
       count++;
     })
     $("#suggestedFriends").html(html);
+    $("#profileSuggestedFriends").html(homeHtml);
     $("#homeSuggestedFriends").html(homeHtml);
   });
 };

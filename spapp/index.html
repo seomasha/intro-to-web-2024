@@ -175,6 +175,55 @@
 
     <!--Add comment-->
 
+    <div
+      class="modal fade"
+      id="add-comment"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">Add comment</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <label for="comment" style="color: #00396c">Add your comment</label>
+            <textarea
+              name="comment"
+              id="comment"
+              placeholder="Enter your comment"
+              class="form-control"
+              style="height: 150px"
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="addComment"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-plus" aria-hidden="true"></i> Add comment
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Create startup-->
 
     <div
@@ -214,7 +263,7 @@
                 class="form-control"
                 style="height: 100px; resize: none"
                 name="startup-description"
-                id="description"
+                id="startup-description"
               ></textarea>
 
               <label for="startup-image" class="mt-4" style="color: #00396c"
@@ -241,14 +290,14 @@
                 >What is the category?</label
               >
               <select class="form-control">
-                <option>IT</option>
-                <option>Graphic Design</option>
-                <option>Digital Marketing</option>
+                <option name="">IT</option>
+                <option name="">Graphic Design</option>
+                <option name="">Digital Marketing</option>
               </select>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="addComment">
+            <button type="button" class="btn btn-primary" id="addStartup">
               <i class="fa fa-plus" aria-hidden="true"></i> Create startup
             </button>
             <button
@@ -285,12 +334,18 @@
             ></button>
           </div>
           <div class="modal-body">
-              <h3 style="color: #00396c" id="startupName" class="text-center fw-bold"></h3>
-              <h6 class="fw-light text-center text-primary" id="startupCategory"></h6>
-              <p id="startupDescription"></p>
-              <h6 class="text-primary">Members</h6>
-              <ul id="startupMembers">
-              </ul>
+            <h3
+              style="color: #00396c"
+              id="startupName"
+              class="text-center fw-bold"
+            ></h3>
+            <h6
+              class="fw-light text-center text-primary"
+              id="startupCategory"
+            ></h6>
+            <p id="startupDescription"></p>
+            <h6 class="text-primary">Members</h6>
+            <ul id="startupMembers"></ul>
           </div>
           <div class="modal-footer">
             <button
@@ -335,10 +390,21 @@
             ></button>
           </div>
           <div class="modal-body">
-            <h3 style="color: #00396c" id="investorName" class="text-center fw-bold"></h3>
-            <h5 id="investorBudget" class="text-primary fw-light text-center"></h5>
+            <h3
+              style="color: #00396c"
+              id="investorName"
+              class="text-center fw-bold"
+            ></h3>
+            <h5
+              id="investorBudget"
+              class="text-primary fw-light text-center"
+            ></h5>
             <p id="investorDescription"></p>
-            <h3 style="color: #00396c" id="investorApplies" class="text-center fw-bold"></h3>
+            <h3
+              style="color: #00396c"
+              id="investorApplies"
+              class="text-center fw-bold"
+            ></h3>
           </div>
           <div class="modal-footer">
             <button
@@ -579,9 +645,20 @@
       aria-atomic="true"
       style="position: relative; min-height: 200px"
     >
-      <div id="toast" class="toast" style="position: fixed; bottom: 0; right: 0">
+      <div
+        id="toast"
+        class="toast"
+        style="position: fixed; bottom: 0; right: 0"
+      >
         <div class="toast-header">
-          <img src="" id="toastImage" class="rounded mr-1" alt="Success" height="25" width="25"/>
+          <img
+            src=""
+            id="toastImage"
+            class="rounded mr-1"
+            alt="Success"
+            height="25"
+            width="25"
+          />
           <strong class="mr-auto" id="toastTitle"></strong>
         </div>
         <div class="toast-body" id="toastBody"></div>
