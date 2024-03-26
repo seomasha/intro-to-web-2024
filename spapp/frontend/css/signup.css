@@ -41,7 +41,6 @@ span {
 .signup form .names {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
 }
 .signup form .input-group span {
   color: #00396C;

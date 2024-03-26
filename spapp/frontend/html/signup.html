@@ -7,67 +7,78 @@
   </head>
   <body>
     <h1 class="p-4">IBU <span> | </span> Startup</h1>
-
     <div class="signup border">
-      <form action="" method="" class="container-xl gray-background p-4">
+      <form
+        action="/spapp/#signin"
+        id="signup-form"
+        class="container-xl gray-background p-4"
+        method="post"
+      >
         <div>
           <h1>Sign up</h1>
           <h3>Create your account</h3>
         </div>
         <div>
           <div class="names">
-            <input
-              type="text"
-              name="firstname"
-              placeholder="Enter your name"
-              required
-              class="form-control"
-            />
-            <input
-              type="text"
-              name="lastname"
-              placeholder="Enter your last name"
-              required
-              class="form-control"
-            />
+            <div>
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="Enter your name"
+                class="form-control"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                placeholder="Enter your last name"
+                class="form-control"
+              />
+            </div>
           </div>
           <br />
-          <div class="input-group">
+          <div>
             <input
               name="username"
+              id="username"
               type="text"
               placeholder="Enter your username"
-              required
               class="form-control"
             />
           </div>
           <br />
-          <div class="input-group">
+          <div>
             <input
               name="email"
+              id="email"
               type="email"
               placeholder="Enter your email"
-              required
               class="form-control"
             />
-            <span class="input-group-text" id="basic-addon2">@example.com</span>
           </div>
           <br />
-          <input
-            name="password"
-            type="password"
-            placeholder="Enter your password"
-            required
-            class="form-control"
-          />
+          <div>
+            <input
+              name="password"
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              class="form-control"
+            />
+          </div>
           <br />
-          <input
-            name="password"
-            type="password"
-            placeholder="Confirm your password"
-            required
-            class="form-control"
-          />
+          <div>
+            <input
+              name="confirmpassword"
+              id="confirmpassword"
+              type="password"
+              placeholder="Confirm your password"
+              class="form-control"
+            />
+          </div>
           <br />
         </div>
         <div class="links">
@@ -79,4 +90,6 @@
       </form>
     </div>
   </body>
+
+  <script src="/spapp/frontend/js/forms.js"></script>
 </html>

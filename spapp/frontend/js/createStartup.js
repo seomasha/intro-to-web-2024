@@ -2,11 +2,10 @@ createStartup = () => {
   var startupID = 0;
   var html = "";
 
-  $("#addStartup").click(() => {
-    var startupName = $("#startup-name").val();
-    var startupCategory = $("#startupCategory").val();
+  var startupName = $("#startupname").val();
+  var startupCategory = $("#startupCategory").val();
 
-    html += `
+  html += `
         <div class="card col-md-3" style="width: 15rem" id="startup-${startupID}">
           <img src="./frontend/assets/postpic.jpeg" class="card-img-top" alt="startup-image" />
           <div class="card-body">
@@ -25,10 +24,7 @@ createStartup = () => {
         </div>
       `;
 
-    $("#startupProfileSection").append(html);
+  $("#startupProfileSection").append(html);
 
-    html = "";
-  });
+  html = "";
 };
-
-createStartup();

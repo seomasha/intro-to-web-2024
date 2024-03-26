@@ -92,5 +92,3 @@ createPosition = () => {
     $("#positionSection").append(html);
   }
 };
-
-$("#createPosition").on("click", createPosition);

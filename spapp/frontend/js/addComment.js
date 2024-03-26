@@ -1,10 +1,9 @@
 addComment = (commentID) => {
   let html = "";
 
-  $("#addComment").click(() => {
-    let commentBody = $("#comment").val();
+  let commentBody = $("#comment").val();
 
-    html += `
+  html += `
         <div class="d-flex gap-2 my-4">
             <img
             src="/spapp/frontend/assets/profilepic.jpg"
@@ -24,10 +23,7 @@ addComment = (commentID) => {
         </div>
         `;
 
-    $(`#commentSection-0`).append(html);
+  $(`#commentSection-0`).append(html);
 
-    html = "";
-  });
+  html = "";
 };
-
-addComment();

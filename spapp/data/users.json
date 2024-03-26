@@ -4,6 +4,8 @@
     "name": "Sead Masetic",
     "username": "seadmasetic",
     "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "maseticsead@gmail.com",
+    "password": "12312312",
     "friends": [
       {
         "id": 0,
@@ -59,6 +61,8 @@
     "name": "Alen Kursumlija",
     "username": "alenkursumlija",
     "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "kursumlijaalen@gmail.com",
+    "password": "12312312",
     "friends": [
       {
         "id": 0,
@@ -112,6 +116,8 @@
     "name": "Fikret Zajmovic",
     "username": "fikretzajmovic",
     "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "zajmovicfikret@gmail.com",
+    "password": "12312312",
     "friends": [
       {
         "id": 0,
@@ -163,10 +169,12 @@
   },
 
   {
-    "id": 2,
+    "id": 3,
     "name": "Dario Coric",
     "username": "dariocoric",
     "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "coricdario@gmail.com",
+    "password": "12312312",
     "friends": [
       {
         "id": 0,
