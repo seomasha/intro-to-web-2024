@@ -20,7 +20,7 @@
   },
   {
     "id": 1,
-    "founder": "Selima Kursuzajmocoric",
+    "founder": "Alena Kursumlija",
     "name": "Penthouse",
     "category": "Digital marketing",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
@@ -38,13 +38,13 @@
 
       {
         "id": 2,
-        "name": "Ekrem Ganovic"
+        "name": "Nermin Ganovic"
       }
     ]
   },
   {
     "id": 2,
-    "founder": "Selima Kursuzajmocoric",
+    "founder": "Daria Coric",
     "name": "Penthouse",
     "category": "Digital marketing",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
@@ -62,14 +62,14 @@
 
       {
         "id": 2,
-        "name": "Ekrem Ganovic"
+        "name": "Zijad Ganovic"
       }
     ]
   },
   {
-    "id": 2,
-    "founder": "Selima Kursuzajmocoric",
-    "name": "Penthouse",
+    "id": 3,
+    "founder": "Selima Ganovic",
+    "name": "Web introduction",
     "category": "Graphic Design",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
     "image": "/spapp/frontend/assets/postpic.jpeg",

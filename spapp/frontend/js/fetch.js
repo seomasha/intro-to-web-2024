@@ -7,8 +7,6 @@ getStartups = () => {
     }
   });
 
-  console.log(checkedValues);
-
   $.get("./data/startups.json", (data) => {
     let html = ``;
 
@@ -34,6 +32,7 @@ getStartups = () => {
                   class="btn btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#apply-startup"
+                  onclick="applyStartup(${startup.id})"
                   ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
                 >
               </div>
@@ -67,6 +66,7 @@ getStartups = () => {
                   class="btn btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#apply-startup"
+                  onclick="applyStartup(${startup.id})"
                   ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
                 >
               </div>
@@ -154,6 +154,7 @@ getPositions = () => {
                   class="btn btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#apply-position"
+                  onclick="applyPosition(${position.id})"
               >
                   <i class="fa fa-share" aria-hidden="true"></i> Apply
               </button>
@@ -191,6 +192,7 @@ getInvestors = () => {
               <a class="btn btn-outline-primary"
               data-bs-toggle="modal"
               data-bs-target="#apply-investor"
+              onclick="applyInvestor(${investor.id})"
               ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
               >
           </div>
@@ -261,7 +263,7 @@ getFriendsRequests = () => {
             </h6>
           </div>
           <div class="my-auto p-2">
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-primary" id="acceptFriend-${request.id}" onclick="acceptFriendRequest(${user.id}, ${request.id})">
               <i class="fa fa-check" aria-hidden="true"></i>
             </button>
             <button class="btn btn-outline-danger">
@@ -280,8 +282,6 @@ getFriendsRequests = () => {
 getFriendsRequestsProfile = () => {
   $.get("./data/users.json", (data) => {
     let html = ``;
-
-    console.log(data);
 
     $.each(data, (index, user) => {
       if (user.name === "Sead Masetic") {
@@ -354,6 +354,81 @@ getStartupsProfile = () => {
   });
 };
 
+getSuggestedFriends = () => {
+  let count = 0;
+  $.get("./data/users.json", (data) => {
+    let html = ``;
+    let homeHtml = ``;
+
+    $.each(data, (index, suggestedFriend) => {
+      html += `
+      <div class="card col-md-3" style="width: 15rem">
+            <img
+              src="${suggestedFriend.profilepic}"
+              class="card-img-top"
+              style="background-size: cover; max-height: 200px;"
+              alt="friend-image"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center" style="color: #00396c">
+                ${suggestedFriend.name}
+              </h4>
+              <p class="card-text text-center text-secondary fw-light">@${suggestedFriend.username}</p>
+              <div class="text-center mt-4">
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#add-friend"
+                  onclick="addFriend(${suggestedFriend.id})"
+                  ><i class="fa fa-user-plus" aria-hidden="true"></i> Add
+                  friend</a
+                >
+              </div>
+            </div>
+          </div>
+      `;
+    });
+
+    $.each(data, (index, suggestedFriend) => {
+
+      if(count >= 3) {
+        return false;
+      }
+
+      homeHtml += `
+      <div
+        class="d-flex p-2 gap-2 friend rounded-pill mt-4 justify-content-between border"
+      >
+        <div class="d-flex gap-2">
+          <img
+            src="${suggestedFriend.profilepic}"
+            class="rounded-5 rounded-circle"
+            style="width: 50px; height: 50px; background-size: cover"
+          />
+          <h6 class="my-auto" style="font-size: 14px; color: #00396c">
+            ${suggestedFriend.name}
+          </h6>
+        </div>
+        <div class="my-auto p-2">
+          <button
+            class="btn btn-outline-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#add-friend"
+            onclick="addFriend(${suggestedFriend.id})"
+          >
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      `;
+      count++;
+    })
+    $("#suggestedFriends").html(html);
+    $("#homeSuggestedFriends").html(homeHtml);
+  });
+};
+
 getFriendsRequests();
 getFriendsRequestsProfile();
 getStartups();
@@ -361,3 +436,4 @@ getStartupsProfile();
 getNotifications();
 getInvestors();
 getPositions();
+getSuggestedFriends();

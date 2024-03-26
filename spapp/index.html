@@ -69,7 +69,7 @@
           <div class="modal-body">
             <p>
               Are you sure that you want to add
-              <span style="color: #00396c">Fikret Zajmović</span> as a friend?
+              <span style="color: #00396c" id="friendName"></span>?
             </p>
           </div>
           <div class="modal-footer">
@@ -285,10 +285,12 @@
             ></button>
           </div>
           <div class="modal-body">
-            <p>
-              Are you sure that you want to apply for
-              <span style="color: #00396c">IT Startup</span>?
-            </p>
+              <h3 style="color: #00396c" id="startupName" class="text-center fw-bold"></h3>
+              <h6 class="fw-light text-center text-primary" id="startupCategory"></h6>
+              <p id="startupDescription"></p>
+              <h6 class="text-primary">Members</h6>
+              <ul id="startupMembers">
+              </ul>
           </div>
           <div class="modal-footer">
             <button
@@ -303,6 +305,7 @@
               type="button"
               class="btn btn-danger"
               data-bs-dismiss="modal"
+              onclick="clearStartup()"
             >
               <i class="fa fa-ban" aria-hidden="true"></i> Cancel
             </button>
@@ -332,14 +335,16 @@
             ></button>
           </div>
           <div class="modal-body">
-            <h3 style="color: #00396c" id="investorName"></h3>
-            <h5 id="investorCategory"></h5>
+            <h3 style="color: #00396c" id="investorName" class="text-center fw-bold"></h3>
+            <h5 id="investorBudget" class="text-primary fw-light text-center"></h5>
+            <p id="investorDescription"></p>
+            <h3 style="color: #00396c" id="investorApplies" class="text-center fw-bold"></h3>
           </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-primary"
-              id="applyStartup"
+              id="applyInvestor"
               data-bs-dismiss="modal"
             >
               <i class="fa fa-plus" aria-hidden="true"></i> Apply
@@ -379,7 +384,7 @@
           <div class="modal-body">
             <p>
               Are you sure that you want to apply for
-              <span style="color: #00396c">IT Startup position</span>?
+              <span style="color: #00396c" id="positionNameAlert"></span>?
             </p>
           </div>
           <div class="modal-footer">
@@ -569,6 +574,20 @@
       role="alert"
     ></div>
 
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+      style="position: relative; min-height: 200px"
+    >
+      <div id="toast" class="toast" style="position: fixed; bottom: 0; right: 0">
+        <div class="toast-header">
+          <img src="" id="toastImage" class="rounded mr-1" alt="Success" height="25" width="25"/>
+          <strong class="mr-auto" id="toastTitle"></strong>
+        </div>
+        <div class="toast-body" id="toastBody"></div>
+      </div>
+    </div>
+
     <script src="./frontend/js/jquery.spapp.js"></script>
     <script src="./frontend/js/jquery.spapp.min.js"></script>
     <script
@@ -577,6 +596,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://use.fontawesome.com/0ed2d2b93d.js"></script>
+    <script src="/spapp/frontend/js/alert.js"></script>
 
     <script>
       let app = $.spapp({
