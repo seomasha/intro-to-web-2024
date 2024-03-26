@@ -136,20 +136,19 @@ getPositions = () => {
               </div>
               </div>
               <hr />
-              <div class="d-flex gap-2 my-4" id="comment-${position.id}">
+              <div id="commentSection-${position.id}">
               </div>
               <div class="d-flex justify-content-evenly">
               <button class="btn btn-outline-primary">
                   <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like
               </button>
               <button
+                  id="commentBtn-${position.id}"
                   class="btn btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#add-comment"
-                  id="commentBtn-${position.id}
-                  onclick="addComment(${position.id})"
               >
-                  <i class="fa fa-thumbs-up" aria-hidden="true "></i> Comment
+                  <i class="fa fa-comment" aria-hidden="true "></i> Comment
               </button>
               <button
                   class="btn btn-outline-primary"
