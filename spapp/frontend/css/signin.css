@@ -14,11 +14,10 @@ span {
 }
 
 .signin {
-  background-color: white;
+  background-color: #FAFAFA;
   width: 500px;
   height: 600px;
   margin: auto;
-  margin-top: 20px;
   border-radius: 24px;
   display: flex;
   padding: 8px;
@@ -51,4 +50,4 @@ span {
 }
 .signin .links a:hover {
   color: #00396C;
-}
+}/*# sourceMappingURL=signin.css.map */
