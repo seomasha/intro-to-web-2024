@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBU Startup | Home</title>
+  </head>
+  <body>
+    <div class="container text-center" style="margin-top: 64px">
+      <div class="row p-4 gap-4">
+        <div
+          class="col-xl-2 bg-white rounded-5 p-4 border"
+          style="max-height: 300px"
+        >
+          <img
+            src="/spapp/frontend/assets/profilepic.jpg"
+            class="rounded-5 rounded-circle"
+            style="width: 100px; height: 100px; background-size: cover"
+          />
+          <h1 class="fs-4 mt-4">Sead Mašetić</h1>
+          <h3 class="fs-6 text-secondary fw-light">@seadmasetic</h3>
+          <a href="#myprofile" class="btn btn-outline-primary mt-3"
+            >Go to my profile</a
+          >
+        </div>
+        <div class="col-xl-6">
+          <div class="bg-white rounded-5 border">
+            <div class="d-flex p-4 gap-2">
+              <img
+                src="/spapp/frontend/assets/profilepic.jpg"
+                class="rounded-5 rounded-circle"
+                style="width: 50px; height: 50px; background-size: cover"
+              />
+              <button
+                type="text"
+                class="p-2 text-start text-secondary rounded-pill bg-transparent border w-100 fw-light"
+                data-bs-toggle="modal"
+                data-bs-target="#create-position"
+              >
+                Click here to create a new position!
+              </button>
+            </div>
+          </div>
+          <br />
+          <div id="positionSection"></div>
+        </div>
+        <div
+          class="col-xl-3 rounded-5 bg-white border"
+          style="max-height: 410px"
+        >
+          <h6 class="mt-4" style="color: #00396c">Suggested friends</h6>
+          <div id="homeSuggestedFriends">
+
+          </div>
+          <a href="#friends" class="btn btn-outline-primary my-4"
+            >Discover more</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="/spapp/frontend/js/addComment.js"></script>
+  <script src="/spapp/frontend/js/createPosition.js"></script>
+  <script src="/spapp/frontend/js/fetch.js"></script>
+  <script src="/spapp/frontend/js/alert.js"></script>
+  <script src="/spapp/frontend/js/forms.js"></script>
+</html>

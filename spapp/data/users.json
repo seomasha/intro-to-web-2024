@@ -1,0 +1,226 @@
+[
+  {
+    "id": 0,
+    "name": "Sead Masetic",
+    "username": "seadmasetic",
+    "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "maseticsead@gmail.com",
+    "password": "12312312",
+    "friends": [
+      {
+        "id": 0,
+        "name": "Alen Kursumlija",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+
+      {
+        "id": 1,
+        "name": "Nermin Zajmovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      }
+    ],
+    "startups": [
+      {
+        "id": 0,
+        "name": "Burch University",
+        "founder": "Sead Masetic",
+        "category": "IT",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+        "image": "/spapp/frontend/assets/postpic.jpeg",
+        "members": [
+          {
+            "id": 0,
+            "name": "Sead Masetic",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          },
+
+          {
+            "id": 1,
+            "name": "Dario Coric",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          }
+        ]
+      }
+    ],
+    "friendRequests": [
+      {
+        "id": 0,
+        "name": "Fikret Zajmovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Ifeta Panj",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      }
+    ]
+  },
+
+  {
+    "id": 1,
+    "name": "Alen Kursumlija",
+    "username": "alenkursumlija",
+    "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "kursumlijaalen@gmail.com",
+    "password": "12312312",
+    "friends": [
+      {
+        "id": 0,
+        "name": "Alen Kursumlija",
+        "image": "/spapp/frontend/assets/postpic.jpeg"
+      },
+
+      {
+        "id": 1,
+        "name": "Nermin Zajmovic",
+        "image": "/spapp/frontend/assets/postpic.jpeg"
+      }
+    ],
+    "startups": [
+      {
+        "id": 0,
+        "name": "Burch University",
+        "category": "IT",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+        "image": "/spapp/frontend/assets/postpic.jpeg",
+        "members": [
+          {
+            "id": 0,
+            "name": "Sead Masetic",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          },
+
+          {
+            "id": 1,
+            "name": "Dario Coric",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          }
+        ]
+      }
+    ],
+    "friendRequests": [
+      {
+        "id": 0,
+        "name": "Fikret Zajmovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Ifeta Panj",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Fikret Zajmovic",
+    "username": "fikretzajmovic",
+    "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "zajmovicfikret@gmail.com",
+    "password": "12312312",
+    "friends": [
+      {
+        "id": 0,
+        "name": "Sead Masetic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+
+      {
+        "id": 1,
+        "name": "Selim Ganovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      }
+    ],
+    "startups": [
+      {
+        "id": 0,
+        "name": "Burch University",
+        "founder": "Fikret Zajmovic",
+        "category": "IT",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+        "image": "/spapp/frontend/assets/postpic.jpeg",
+        "members": [
+          {
+            "id": 0,
+            "name": "Sead Masetic",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          },
+
+          {
+            "id": 1,
+            "name": "Dario Coric",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          }
+        ]
+      }
+    ],
+    "friendRequests": [
+      {
+        "id": 0,
+        "name": "Dario Coric",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Ifeta Panj",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "name": "Dario Coric",
+    "username": "dariocoric",
+    "profilepic": "/spapp/frontend/assets/profilepic.jpg",
+    "mail": "coricdario@gmail.com",
+    "password": "12312312",
+    "friends": [
+      {
+        "id": 0,
+        "name": "Alen Kursumlija",
+        "image": "/spapp/frontend/assets/postpic.jpeg"
+      },
+
+      {
+        "id": 1,
+        "name": "Nermin Zajmovic",
+        "image": "/spapp/frontend/assets/postpic.jpeg"
+      }
+    ],
+    "startups": [
+      {
+        "id": 0,
+        "name": "Burch University",
+        "category": "IT",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?",
+        "image": "/spapp/frontend/assets/postpic.jpeg",
+        "members": [
+          {
+            "id": 0,
+            "name": "Sead Masetic",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          },
+
+          {
+            "id": 1,
+            "name": "Dario Coric",
+            "image": "/spapp/frontend/assets/postpic.jpeg"
+          }
+        ]
+      }
+    ],
+    "friendRequests": [
+      {
+        "id": 0,
+        "name": "Fikret Zajmovic",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Ifeta Panj",
+        "image": "/spapp/frontend/assets/profilepic.jpg"
+      }
+    ]
+  }
+]

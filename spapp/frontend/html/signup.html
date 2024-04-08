@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBU Startup | Sign up</title>
+  </head>
+  <body>
+    <h1 class="p-4">IBU <span> | </span> Startup</h1>
+    <div class="signin border container" style="height: 800px;">
+      <form
+        action="/spapp/#signin"
+        id="signup-form"
+        class="container-xl gray-background p-4"
+        method="post"
+      >
+        <div>
+          <h1>Sign up</h1>
+          <h3>Create your account</h3>
+        </div>
+        <div>
+          <div class="names">
+            <div>
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="Enter your name"
+                class="form-control"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                placeholder="Enter your last name"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <br />
+          <div>
+            <input
+              name="username"
+              id="username"
+              type="text"
+              placeholder="Enter your username"
+              class="form-control"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              name="email"
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              class="form-control"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              name="password"
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              class="form-control"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              name="confirmpassword"
+              id="confirmpassword"
+              type="password"
+              placeholder="Confirm your password"
+              class="form-control"
+            />
+          </div>
+          <br />
+        </div>
+        <div class="links">
+          <a href="#signin">Click here to sign in!</a>
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary btn-block">
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+
+  <script src="/spapp/frontend/js/forms.js"></script>
+</html>

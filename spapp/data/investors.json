@@ -1,0 +1,28 @@
+[
+  {
+    "id": 0,
+    "name": "Investor 1",
+    "image": "/spapp/frontend/assets/postpic.jpeg",
+    "budget": 1500,
+    "applies": 45,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?"
+  },
+
+  {
+    "id": 1,
+    "name": "Investor 2",
+    "image": "/spapp/frontend/assets/postpic.jpeg",
+    "budget": 2000,
+    "applies": 245,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?"
+  },
+
+  {
+    "id": 2,
+    "name": "Investor 3",
+    "image": "/spapp/frontend/assets/postpic.jpeg",
+    "budget": 2500,
+    "applies": 145,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem officiis earum inventore, harum sequi, sunt pariatur incidunt quas ipsam est quam voluptatem sapiente omnis consequuntur porro rem itaque eum?"
+  }
+]
