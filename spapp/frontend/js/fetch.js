@@ -7,11 +7,13 @@ getStartups = () => {
     }
   });
 
-  $.get("./data/startups.json", (data) => {
+  $.get("frontend/data/startups.json", (data) => {
     let html = ``;
 
+    let jsonData = JSON.parse(data);
+
     if (checkedValues.length === 0) {
-      $.each(data, (index, startup) => {
+      $.each(jsonData, (index, startup) => {
         html += `
         <div class="card col-md-3" style="width: 15rem" id="startup-${startup.id}">
             <img
@@ -41,7 +43,7 @@ getStartups = () => {
         `;
       });
     } else {
-      const filteredStartups = $.grep(data, (startup) => {
+      const filteredStartups = $.grep(jsonData, (startup) => {
         return checkedValues.includes(startup.category);
       });
 
@@ -81,15 +83,15 @@ getStartups = () => {
     console.log(error);
   });
 };
+
 getPositions = () => {
   $.get("frontend/data/positions.json", (data) => {
-    console.log(data);
     let html = ``;
-    $.each(data, (index, position) => {
-      let positionPicture =
-        position.positionpicture !== ""
-          ? `<img src=${position.positionpicture} alt="" class="img-thumbnail mt-4" style="width: auto" />`
-          : "";
+
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, position) => {
+      let positionPicture = position.positionpicture ? `<img src=${position.positionpicture} alt="" class="img-thumbnail mt-4" style="width: auto" />` : "";
 
       html += `
           <div class="bg-white rounded-5 p-4 border" id="position-${position.id}">
@@ -143,7 +145,8 @@ getPositions = () => {
                   <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like
               </button>
               <button
-                  id="commentBtn-${position.id}"
+              
+    id="commentBtn-${position.id}"
                   class="btn btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#add-comment"
@@ -170,10 +173,14 @@ getPositions = () => {
   });
 };
 
+
 getInvestors = () => {
-  $.get("./data/investors.json", (data) => {
+  $.get("frontend/data/investors.json", (data) => {
+
+    let jsonData = JSON.parse(data);
+
     let html = ``;
-    $.each(data, (index, investor) => {
+    $.each(jsonData, (index, investor) => {
       html += `
       <div class="card col-md-3" style="width: 15rem" id="investor-${investor.id}">
           <img
@@ -207,9 +214,12 @@ getInvestors = () => {
 };
 
 getNotifications = () => {
-  $.get("./data/notifications.json", (data) => {
+  $.get("frontend/data/notifications.json", (data) => {
+
+    let jsonData = JSON.parse(data);
+
     let html = ``;
-    $.each(data, (index, notification) => {
+    $.each(jsonData, (index, notification) => {
       let body = ``;
 
       if (notification.type === "position") {
@@ -242,10 +252,12 @@ getNotifications = () => {
 };
 
 getFriendsRequests = () => {
-  $.get("./data/users.json", (data) => {
+  $.get("frontend/data/users.json", (data) => {
     let html = ``;
 
-    $.each(data, (index, user) => {
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, user) => {
       if (user.name === "Sead Masetic") {
         $.each(user.friendRequests, (index, request) => {
           html += `
@@ -280,10 +292,12 @@ getFriendsRequests = () => {
 };
 
 getFriendsRequestsProfile = () => {
-  $.get("./data/users.json", (data) => {
+  $.get("frontend/data/users.json", (data) => {
     let html = ``;
 
-    $.each(data, (index, user) => {
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, user) => {
       if (user.name === "Sead Masetic") {
         $.each(user.friends, (index, friend) => {
           html += `
@@ -315,10 +329,12 @@ getFriendsRequestsProfile = () => {
 };
 
 getStartupsProfile = () => {
-  $.get("./data/users.json", (data) => {
+  $.get("frontend/data/users.json", (data) => {
     let html = ``;
 
-    $.each(data, (index, user) => {
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, user) => {
       if (user.name === "Sead Masetic") {
         $.each(user.startups, (index, startup) => {
           html += `
@@ -356,11 +372,15 @@ getStartupsProfile = () => {
 
 getSuggestedFriends = () => {
   let count = 0;
-  $.get("./data/users.json", (data) => {
+
+  $.get("frontend/data/users.json", (data) => {
+
+    let jsonData = JSON.parse(data);
+
     let html = ``;
     let homeHtml = ``;
 
-    $.each(data, (index, suggestedFriend) => {
+    $.each(jsonData, (index, suggestedFriend) => {
       html += `
       <div class="card col-md-3" style="width: 15rem">
             <img
@@ -390,7 +410,7 @@ getSuggestedFriends = () => {
       `;
     });
 
-    $.each(data, (index, suggestedFriend) => {
+    $.each(jsonData, (index, suggestedFriend) => {
       if (count >= 3) {
         return false;
       }
@@ -430,3 +450,10 @@ getSuggestedFriends = () => {
 };
 
 getPositions();
+getSuggestedFriends();
+getStartups();
+getInvestors();
+getNotifications();
+getFriendsRequests();
+getFriendsRequestsProfile();
+getStartupsProfile();
