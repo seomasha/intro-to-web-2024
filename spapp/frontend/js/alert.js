@@ -1,9 +1,11 @@
 applyPosition = (startupID) => {
-  /*
   let positionName = "";
 
-  $.get("./data/positions.json", (data) => {
-    $.each(data, (index, position) => {
+  $.get("frontend/data/positions.json", (data) => {
+
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, position) => {
       if (position.id === startupID) {
         positionName = position.positionname;
         $("#positionNameAlert").html(positionName);
@@ -22,16 +24,17 @@ applyPosition = (startupID) => {
 
     $("#toast").toast("show");
   });
-  */
 };
 
 addFriend = (friendID) => {
-  /*
 
   let friendName = "";
 
-  $.get("./data/users.json", (data) => {
-    $.each(data, (index, friend) => {
+  $.get("frontend/data/users.json", (data) => {
+
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, friend) => {
       if (friend.id === friendID) {
         friendName = friend.name;
         $("#friendName").text(friendName);
@@ -50,15 +53,15 @@ addFriend = (friendID) => {
 
     $("#toast").toast("show");
   });
-  */
 };
 
 applyStartup = (startupID) => {
-  /*
+  
   let startupName = "";
 
-  $.get("./data/startups.json", (data) => {
-    $.each(data, (index, startup) => {
+  $.get("frontend/data/startups.json", (data) => {
+    let jsonData = JSON.parse(data);
+    $.each(jsonData, (index, startup) => {
       if (startup.id === startupID) {
         startupName = startup.name;
         $("#startupName").text(startup.name);
@@ -84,15 +87,16 @@ applyStartup = (startupID) => {
     $("#toast").toast("show");
     clearStartup();
   });
-  */
+  
 };
 
 applyInvestor = (investorID) => {
-  /*
+  
   let investorName = "";
 
-  $.get("./data/investors.json", (data) => {
-    $.each(data, (index, investor) => {
+  $.get("frontend/data/investors.json", (data) => {
+    let jsonData = JSON.parse(data);
+    $.each(jsonData, (index, investor) => {
       if (investor.id === investorID) {
         investorName = investor.name;
         $("#investorName").text(investor.name);
@@ -114,15 +118,18 @@ applyInvestor = (investorID) => {
 
     $("#toast").toast("show");
   });
-  */
+  
 };
 
 acceptFriendRequest = (userID, requestID) => {
-  /*
+  
   let requestName = "";
 
-  $.get("./data/users.json", (data) => {
-    $.each(data, (index, user) => {
+  $.get("frontend/data/users.json", (data) => {
+
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, user) => {
       if (user.id === userID) {
         $.each(user.friendRequests, (index, request) => {
           if (request.id === requestID) {
@@ -144,15 +151,16 @@ acceptFriendRequest = (userID, requestID) => {
       }
     });
   });
-  */
+  
 };
 
 declineFriendRequest = (userID, requestID) => {
-  /*
+  
   let requestName = "";
 
-  $.get("./data/users.json", (data) => {
-    $.each(data, (index, user) => {
+  $.get("frontend/data/users.json", (data) => {
+    let jsonData = JSON.parse(data);
+    $.each(jsonData, (index, user) => {
       if (user.id === userID) {
         $.each(user.friends, (index, request) => {
           if (request.id === requestID) {
@@ -186,7 +194,6 @@ declineFriendRequest = (userID, requestID) => {
       }
     });
   });
-  */
 };
 
 clearStartup = () => {
