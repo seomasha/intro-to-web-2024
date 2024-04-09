@@ -783,20 +783,23 @@
     <script src="/spapp/frontend/js/forms.js"></script>
 
     <script>
-      window.onhashchange = () => {
+      function toggleNavbarVisibility() {
         const navBar = document.getElementById("navigation");
         const signupUrl = "signup";
         const signinUrl = "signin";
 
         if (
-          window.location.href.includes(signupUrl) ||
-          window.location.href.includes(signinUrl)
+          window.location.hash.includes(signupUrl) ||
+          window.location.hash.includes(signinUrl)
         ) {
           navBar.style.display = "none";
         } else {
           navBar.style.display = "block";
         }
-      };
+      }
+      window.onload = toggleNavbarVisibility;
+
+      window.onhashchange = toggleNavbarVisibility;
     </script>
 
     <script>
