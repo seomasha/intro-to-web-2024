@@ -81,9 +81,9 @@ getStartups = () => {
     console.log(error);
   });
 };
-
 getPositions = () => {
-  $.get("./data/positions.json", (data) => {
+  $.get("frontend/data/positions.json", (data) => {
+    console.log(data);
     let html = ``;
     $.each(data, (index, position) => {
       let positionPicture =
@@ -391,8 +391,7 @@ getSuggestedFriends = () => {
     });
 
     $.each(data, (index, suggestedFriend) => {
-
-      if(count >= 3) {
+      if (count >= 3) {
         return false;
       }
 
@@ -423,18 +422,11 @@ getSuggestedFriends = () => {
       </div>
       `;
       count++;
-    })
+    });
     $("#suggestedFriends").html(html);
     $("#profileSuggestedFriends").html(homeHtml);
     $("#homeSuggestedFriends").html(homeHtml);
   });
 };
 
-getFriendsRequests();
-getFriendsRequestsProfile();
-getStartups();
-getStartupsProfile();
-getNotifications();
-getInvestors();
 getPositions();
-getSuggestedFriends();

@@ -1,4 +1,5 @@
 applyPosition = (startupID) => {
+  /*
   let positionName = "";
 
   $.get("./data/positions.json", (data) => {
@@ -21,9 +22,11 @@ applyPosition = (startupID) => {
 
     $("#toast").toast("show");
   });
+  */
 };
 
 addFriend = (friendID) => {
+  /*
 
   let friendName = "";
 
@@ -47,9 +50,11 @@ addFriend = (friendID) => {
 
     $("#toast").toast("show");
   });
+  */
 };
 
 applyStartup = (startupID) => {
+  /*
   let startupName = "";
 
   $.get("./data/startups.json", (data) => {
@@ -79,9 +84,11 @@ applyStartup = (startupID) => {
     $("#toast").toast("show");
     clearStartup();
   });
+  */
 };
 
 applyInvestor = (investorID) => {
+  /*
   let investorName = "";
 
   $.get("./data/investors.json", (data) => {
@@ -107,9 +114,11 @@ applyInvestor = (investorID) => {
 
     $("#toast").toast("show");
   });
+  */
 };
 
 acceptFriendRequest = (userID, requestID) => {
+  /*
   let requestName = "";
 
   $.get("./data/users.json", (data) => {
@@ -135,9 +144,11 @@ acceptFriendRequest = (userID, requestID) => {
       }
     });
   });
+  */
 };
 
 declineFriendRequest = (userID, requestID) => {
+  /*
   let requestName = "";
 
   $.get("./data/users.json", (data) => {
@@ -175,6 +186,7 @@ declineFriendRequest = (userID, requestID) => {
       }
     });
   });
+  */
 };
 
 clearStartup = () => {
