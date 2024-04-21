@@ -89,10 +89,26 @@ $("#createPositionForm").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    $("#createPosition").on("click", createPosition());
-    $("#createPositionForm")[0].reset();
+    let defaultValues = {
+      like_count: '0',
+      comment_count: '0',
+      apply_count: '0',
+      user_id: '20'
+    };
 
-    unblockUI("body");
+    let mergedData = Object.assign({}, data, defaultValues);
+    
+    $.post("../backend/add_position.php", mergedData)
+      .done(function (response) {
+        console.log("Data sent successfully:", mergedData);
+        $("#createPositionForm")[0].reset();
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Error:", error);
+      })
+      .always(function () {
+        unblockUI("body");
+      });
   },
 });
 
