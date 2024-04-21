@@ -149,6 +149,25 @@ $("#createStartupForm").validate({
   },
 });
 
+$("#editPositionForm").validate({
+  submitHandler: (form, event) => {
+
+    let data = serializeForm(form);
+
+    $.post("../backend/add_position.php", data)
+    .done(function (response) {
+      console.log("Data sent successfully:", data);
+      Fetch.getPositions();
+    })
+    .fail(function (xhr, status, error) {
+      console.error("Error:", error);
+    })
+    .always(function () {
+      unblockUI("body");
+    });
+  }
+})
+
 blockUI = (element) => {
   $(element).block({
     message: '<div class="spinner-border text-primary" role="status"></div>',

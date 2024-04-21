@@ -15,11 +15,14 @@ class PositionDao extends BaseDao
         return $this->insert('positions', $position);
     }
 
-    public function getPosition() {
+    public function getPositionByID($id) {
         $query = "SELECT * 
-        FROM positions";
+        FROM positions
+        WHERE id = :id";
 
-        return $this->query_unique($query, []);
+        return $this->query_unique($query, [
+            'id' => $id
+        ]);
     }
 
     public function getPositions() {
@@ -33,6 +36,16 @@ class PositionDao extends BaseDao
         $query = "DELETE FROM positions WHERE id = :id";
         $this->execute($query, [
             'id' => $id
+        ]);
+    }
+
+    public function editPosition($id, $position) {
+        $query = "UPDATE positions SET positionName = :positionName, positionDescription = :positionDescription WHERE id = :id";
+
+        $this->execute($query, [
+            'id' => $id,
+            'positionName' => $position['editPositionName'],
+            'positionDescription' => $position['editPositionDescription']
         ]);
     }
 }

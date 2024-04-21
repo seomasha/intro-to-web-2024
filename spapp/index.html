@@ -278,21 +278,22 @@
           <div class="modal-body">
             <form method="post" id="editPositionForm">
               <div>
-                <label for="positionName" style="color: #00396c">
+                <input type="hidden" name="id" id="edit_id" />
+                <label for="editPositionName" style="color: #00396c">
                   Edit position name
                 </label>
                 <input
                   class="form-control"
-                  name="positionName"
+                  name="editPositionName"
                   type="text"
-                  id="positionName"
+                  id="editPositionName"
                   placeholder="Type in your position name"
                 />
               </div>
 
               <div>
                 <label
-                  for="positionDescription"
+                  for="editPositionDescription"
                   style="color: #00396c"
                   class="mt-4"
                   >Edit position description</label
@@ -301,8 +302,8 @@
                   class="form-control"
                   placeholder="Type in your description"
                   style="height: 100px; resize: none"
-                  name="positionDescription"
-                  id="positionDescription"
+                  name="editPositionDescription"
+                  id="editPositionDescription"
                 ></textarea>
               </div>
               <br />

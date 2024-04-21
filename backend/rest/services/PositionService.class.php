@@ -23,7 +23,21 @@ class PositionService
         return ['data' => $data];
     }
 
-    public function deletePosition($id) {
+    public function getPositionByID($id)
+    {
+        return $this->positionDao->getPositionByID($id);
+    }
+
+    public function deletePosition($id)
+    {
         $this->positionDao->deletePosition($id);
+    }
+
+    public function editPosition($position)
+    {
+        $id = $position['id'];
+        unset($position['id']);
+
+        $this->positionDao->editPosition($id, $position);
     }
 }
