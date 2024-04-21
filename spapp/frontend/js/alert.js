@@ -2,7 +2,6 @@ applyPosition = (startupID) => {
   let positionName = "";
 
   $.get("frontend/data/positions.json", (data) => {
-
     let jsonData = JSON.parse(data);
 
     $.each(jsonData, (index, position) => {
@@ -27,11 +26,9 @@ applyPosition = (startupID) => {
 };
 
 addFriend = (friendID) => {
-
   let friendName = "";
 
   $.get("frontend/data/users.json", (data) => {
-
     let jsonData = JSON.parse(data);
 
     $.each(jsonData, (index, friend) => {
@@ -56,7 +53,6 @@ addFriend = (friendID) => {
 };
 
 applyStartup = (startupID) => {
-  
   let startupName = "";
 
   $.get("frontend/data/startups.json", (data) => {
@@ -87,11 +83,9 @@ applyStartup = (startupID) => {
     $("#toast").toast("show");
     clearStartup();
   });
-  
 };
 
 applyInvestor = (investorID) => {
-  
   let investorName = "";
 
   $.get("frontend/data/investors.json", (data) => {
@@ -118,15 +112,12 @@ applyInvestor = (investorID) => {
 
     $("#toast").toast("show");
   });
-  
 };
 
 acceptFriendRequest = (userID, requestID) => {
-  
   let requestName = "";
 
   $.get("frontend/data/users.json", (data) => {
-
     let jsonData = JSON.parse(data);
 
     $.each(jsonData, (index, user) => {
@@ -151,11 +142,9 @@ acceptFriendRequest = (userID, requestID) => {
       }
     });
   });
-  
 };
 
 declineFriendRequest = (userID, requestID) => {
-  
   let requestName = "";
 
   $.get("frontend/data/users.json", (data) => {
@@ -184,7 +173,9 @@ declineFriendRequest = (userID, requestID) => {
               const toastImage = $("#toastImage");
 
               toastTitle.text("Removed friend!");
-              toastBody.text(`You removed ${requestName} from your friend list!`);
+              toastBody.text(
+                `You removed ${requestName} from your friend list!`
+              );
               toastImage.attr("src", "./frontend/assets/decline.gif");
 
               $("#toast").toast("show");
@@ -194,6 +185,21 @@ declineFriendRequest = (userID, requestID) => {
       }
     });
   });
+};
+
+deletePosition = (id) => {
+  if (
+    confirm("Do you want to delete position with the id: " + id + "?") == true
+  ) {
+    $.ajax({
+      url: "../backend/delete_position.php?id=" + id,
+      type: "DELETE",
+      success: () => {
+        console.log("Succesfully deleted!");
+        Fetch.getPositions();
+      },
+    });
+  }
 };
 
 clearStartup = () => {

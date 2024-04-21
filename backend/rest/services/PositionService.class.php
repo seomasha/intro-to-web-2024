@@ -19,10 +19,11 @@ class PositionService
 
     public function getPositions()
     {
-        //$count = $this->positionDao->countPositions();
         $data = $this->positionDao->getPositions();
-
-        //return ['count' => $count, 'data' => $data];
         return ['data' => $data];
+    }
+
+    public function deletePosition($id) {
+        $this->positionDao->deletePosition($id);
     }
 }

@@ -15,16 +15,6 @@ class PositionDao extends BaseDao
         return $this->insert('positions', $position);
     }
 
-    /*
-    public function countPositions() {
-        $query = "SELECT COUNT(*) AS count 
-        FROM positions 
-        WHERE LOWER(positionName) LIKE ('%', :search, '%')";
-
-        return $this->query_unique($query, []);
-    }
-    */
-
     public function getPosition() {
         $query = "SELECT * 
         FROM positions";
@@ -37,5 +27,12 @@ class PositionDao extends BaseDao
         FROM positions";
 
         return $this->query($query, []);
+    }
+
+    public function deletePosition($id) {
+        $query = "DELETE FROM positions WHERE id = :id";
+        $this->execute($query, [
+            'id' => $id
+        ]);
     }
 }
