@@ -21,6 +21,28 @@ class BaseDao
         }
     }
 
+    protected function query($query, $params) {
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    protected function query_unique($query, $params) {
+        $results = $this->query($query, $params);
+        return reset($results);
+    }
+
+    protected function execute($query, $params) {
+        $prepared_statement = $this->connection->prepare($query);
+        if($params) {
+            foreach ($params as $key => $param) {
+                $prepared_statement->bindValue($key, $param);
+            }
+        }
+        $prepared_statement->execute();
+        return $prepared_statement;
+    }
+
     public function insert($table, $entity)
     {
         $query = "INSERT INTO {$table} (";

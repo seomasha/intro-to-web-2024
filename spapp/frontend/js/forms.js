@@ -1,5 +1,3 @@
-var users = [];
-
 $("#signup-form").validate({
   rules: {
     firstname: {
@@ -102,6 +100,7 @@ $("#createPositionForm").validate({
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
         $("#createPositionForm")[0].reset();
+        Fetch.getPositions();
       })
       .fail(function (xhr, status, error) {
         console.error("Error:", error);

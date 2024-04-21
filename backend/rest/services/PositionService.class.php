@@ -16,4 +16,13 @@ class PositionService
     {
         return $this->positionDao->addPosition($position);
     }
+
+    public function getPositions()
+    {
+        //$count = $this->positionDao->countPositions();
+        $data = $this->positionDao->getPositions();
+
+        //return ['count' => $count, 'data' => $data];
+        return ['data' => $data];
+    }
 }
