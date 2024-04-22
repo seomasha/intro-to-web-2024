@@ -21,20 +21,23 @@ class BaseDao
         }
     }
 
-    protected function query($query, $params) {
+    protected function query($query, $params)
+    {
         $stmt = $this->connection->prepare($query);
         $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    protected function query_unique($query, $params) {
+    protected function query_unique($query, $params)
+    {
         $results = $this->query($query, $params);
         return reset($results);
     }
 
-    protected function execute($query, $params) {
+    protected function execute($query, $params)
+    {
         $prepared_statement = $this->connection->prepare($query);
-        if($params) {
+        if ($params) {
             foreach ($params as $key => $param) {
                 $prepared_statement->bindValue($key, $param);
             }
@@ -45,20 +48,10 @@ class BaseDao
 
     public function insert($table, $entity)
     {
-        $query = "INSERT INTO {$table} (";
-        foreach ($entity as $column => $value) {
-            $query .= $column . ", ";
-        }
+        $columns = implode(', ', array_keys($entity));
+        $values = ':' . implode(', :', array_keys($entity));
 
-        $query = substr($query, 0, -2);
-        $query .= ") VALUES (";
-
-        foreach ($entity as $column => $value) {
-            $query .= ":" . $column . ", ";
-        }
-
-        $query = substr($query, 0, -2);
-        $query .= ")";
+        $query = "INSERT INTO {$table} ({$columns}) VALUES ({$values})";
 
         $stmt = $this->connection->prepare($query);
         $stmt->execute($entity);

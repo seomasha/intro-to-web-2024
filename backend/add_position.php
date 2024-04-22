@@ -4,7 +4,6 @@ require_once __DIR__ . "/rest/services/PositionService.class.php";
 
 $payload = $_REQUEST;
 
-
 $positionService = new PositionService();
 
 if($payload['id'] != NULL && $payload['id'] != '') {

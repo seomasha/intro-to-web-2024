@@ -1,30 +1,28 @@
 var Fetch = {
-  getStartups: () => {
+  getStartups: (category = "") => {
     const checkedValues = [];
-    $("input[type='checkbox']").each(function () {
-      //Why doesn't an arrow function work here?
+    $("input[type='radio']").each(function () {
       if ($(this).prop("checked")) {
-        checkedValues.push($(this).attr("name"));
+        checkedValues.push($(this).attr("value"));
       }
     });
-
-    $.get("frontend/data/startups.json", (data) => {
+    $.get("../backend/get_startups.php", (data) => {
       let html = ``;
 
       let jsonData = JSON.parse(data);
 
-      if (checkedValues.length === 0) {
-        $.each(jsonData, (index, startup) => {
+      $.each(jsonData, (index, startups) => {
+        $.each(startups, (index, startup) => {
           html += `
           <div class="card col-md-3" style="width: 15rem" id="startup-${startup.id}">
               <img
-                src=${startup.image}
+                src="./frontend/assets/startup.jpeg"
                 class="card-img-top"
                 alt="startup-image"
               />
               <div class="card-body">
                 <h6 class="card-title text-center" style="color: #00396c">
-                  ${startup.name} <br> <span class="fw-light text-primary">${startup.founder}</span>
+                  ${startup.name} <br> <span class="fw-light text-primary">${startup.first_name} ${startup.last_name}</span>
                 </h6>
                 <p class="card-text text-center fw-light">
                   ${startup.category}
@@ -43,42 +41,7 @@ var Fetch = {
             </div>
           `;
         });
-      } else {
-        const filteredStartups = $.grep(jsonData, (startup) => {
-          return checkedValues.includes(startup.category);
-        });
-
-        $.each(filteredStartups, (index, startup) => {
-          html += `
-          <div class="card col-md-3" style="width: 15rem" id="startup-${startup.id}">
-              <img
-                src=${startup.image}
-                class="card-img-top"
-                alt="startup-image"
-              />
-              <div class="card-body">
-                <h6 class="card-title text-center" style="color: #00396c">
-                  ${startup.name} <br> <span class="fw-light text-primary">${startup.founder}</span>
-                </h6>
-                <p class="card-text text-center fw-light">
-                  ${startup.category}
-                </p>
-                <div class="text-center">
-                  <a
-                    href="#"
-                    class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#apply-startup"
-                    onclick="applyStartup(${startup.id})"
-                    ><i class="fa fa-share" aria-hidden="true"></i> Apply</a
-                  >
-                </div>
-              </div>
-            </div>
-          `;
-        });
-      }
-
+      });
       $("#startupSection").html(html);
     }).fail((error) => {
       console.log(error);
@@ -331,43 +294,47 @@ var Fetch = {
     });
   },
 
+  
   getStartupsProfile: () => {
-    $.get("frontend/data/users.json", (data) => {
+    $.get("../backend/get_startups.php", (data) => {
       let html = ``;
 
       let jsonData = JSON.parse(data);
 
+      console.log(jsonData)
+
       $.each(jsonData, (index, user) => {
-        if (user.name === "Sead Masetic") {
-          $.each(user.startups, (index, startup) => {
-            html += `
+        $.each(user, (index, startup) => {
+          html += `
             <div class="card col-md-3" style="width: 15rem" id="startup-${startup.id}">
             <img
-              src=${startup.image}
+              src="./frontend/assets/startup.jpeg"
               class="card-img-top"
               alt="startup-image"
             />
             <div class="card-body">
               <h6 class="card-title text-center" style="color: #00396c">
-                ${startup.name} <br> <span class="fw-light text-primary">${startup.founder}</span>
+                ${startup.name} <br> <span class="fw-light text-primary">${startup.first_name} ${startup.last_name}</span>
               </h6>
               <p class="card-text text-center fw-light">
                 ${startup.category}
               </p>
               <div class="text-center">
                 <a
-                  href="#"
                   class="btn btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#edit-startup"
                   ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a
                 >
+                <a
+                class="btn btn-outline-danger"
+                ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a
+              >
               </div>
             </div>
           </div>
             `;
-          });
-        }
+        });
       });
       $("#startupProfileSection").html(html);
     });

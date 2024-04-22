@@ -1,10 +1,10 @@
 $("#signup-form").validate({
   rules: {
-    firstname: {
+    first_name: {
       required: true,
     },
 
-    lastname: {
+    last_name: {
       required: true,
     },
 
@@ -40,10 +40,17 @@ $("#signup-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    users.push(data);
-    $("#signup-form")[0].reset();
-
-    unblockUI("body");
+    $.post("../backend/add_user.php", data)
+      .done(function (response) {
+        console.log("Data sent successfully:", data);
+        $("#signup-form")[0].reset();
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Error:", error);
+      })
+      .always(function () {
+        unblockUI("body");
+      });
   },
 });
 
@@ -88,14 +95,14 @@ $("#createPositionForm").validate({
     let data = serializeForm(form);
 
     let defaultValues = {
-      like_count: '0',
-      comment_count: '0',
-      apply_count: '0',
-      user_id: '20'
+      like_count: "0",
+      comment_count: "0",
+      apply_count: "0",
+      user_id: "20",
     };
 
     let mergedData = Object.assign({}, data, defaultValues);
-    
+
     $.post("../backend/add_position.php", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
@@ -141,23 +148,18 @@ $("#createStartupForm").validate({
     event.preventDefault();
     blockUI("body");
     let data = serializeForm(form);
+    let defaultValues = {
+      founder_id: "20",
+    };
 
-    $("#addStartup").on("click", createStartup());
-    $("#createStartupForm")[0].reset();
+    let mergedData = Object.assign({}, data, defaultValues);
 
-    unblockUI("body");
-  },
-});
-
-$("#editPositionForm").validate({
-  submitHandler: (form, event) => {
-
-    let data = serializeForm(form);
-
-    $.post("../backend/add_position.php", data)
+    $.post("../backend/add_startup.php", mergedData)
     .done(function (response) {
-      console.log("Data sent successfully:", data);
-      Fetch.getPositions();
+      console.log("Data sent successfully:", mergedData);
+      $("#createStartupForm")[0].reset();
+      Fetch.getStartups();
+      Fetch.getStartupsProfile();
     })
     .fail(function (xhr, status, error) {
       console.error("Error:", error);
@@ -165,8 +167,26 @@ $("#editPositionForm").validate({
     .always(function () {
       unblockUI("body");
     });
-  }
-})
+  },
+});
+
+$("#editPositionForm").validate({
+  submitHandler: (form, event) => {
+    let data = serializeForm(form);
+
+    $.post("../backend/add_position.php", data)
+      .done(function (response) {
+        console.log("Data sent successfully:", data);
+        Fetch.getPositions();
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Error:", error);
+      })
+      .always(function () {
+        unblockUI("body");
+      });
+  },
+});
 
 blockUI = (element) => {
   $(element).block({

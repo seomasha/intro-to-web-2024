@@ -408,14 +408,14 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form action="" method="post" id="createStartupForm">
+            <form method="post" id="createStartupForm">
               <label for="startup-name" style="color: #00396c">
                 Startup name
               </label>
               <input
                 type="text"
                 class="form-control"
-                name="startupname"
+                name="name"
                 id="startupname"
               />
               <br />
@@ -425,19 +425,9 @@
               <textarea
                 class="form-control"
                 style="height: 100px; resize: none"
-                name="startup-description"
+                name="description"
                 id="startup-description"
               ></textarea>
-
-              <label for="startup-image" class="mt-4" style="color: #00396c"
-                >Add an image</label
-              >
-              <input
-                class="form-control"
-                type="file"
-                accept="image/*"
-                id="startup-image"
-              />
 
               <label for="startupMembers" class="mt-4" style="color: #00396c"
                 >Add the members (Separate by semicolon ;)</label
@@ -446,13 +436,13 @@
                 class="form-control"
                 type="text"
                 id="startupMembers"
-                name="startupMembers"
+                name="members"
               />
 
               <label for="startupCategory" class="mt-4" style="color: #00396c"
                 >What is the category?</label
               >
-              <select class="form-control" id="startupCategory">
+              <select class="form-control" name="category" id="startupCategory">
                 <option value="IT">IT</option>
                 <option value="Graphic Design">Graphic Design</option>
                 <option value="Digital Marketing">Digital Marketing</option>
@@ -461,7 +451,6 @@
               <div class="modal-footer">
                 <button
                   type="submit"
-                  name="submit"
                   class="btn btn-primary"
                   id="addStartup"
                 >
@@ -666,7 +655,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form action="" method="">
+            <form method="post" id="editStartupForm">
               <label for="startup-name" style="color: #00396c">
                 Startup name
               </label>
@@ -686,16 +675,6 @@
                 name="startup-description"
                 id="description"
               ></textarea>
-
-              <label for="startup-image" class="mt-4" style="color: #00396c"
-                >Edit the image</label
-              >
-              <input
-                class="form-control"
-                type="file"
-                accept="image/*"
-                id="startupImage"
-              />
 
               <label for="startupMembers" class="mt-4" style="color: #00396c"
                 >Edit the members (Separate by semicolon ;)</label
