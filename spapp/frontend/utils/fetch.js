@@ -301,8 +301,6 @@ var Fetch = {
 
       let jsonData = JSON.parse(data);
 
-      console.log(jsonData)
-
       $.each(jsonData, (index, user) => {
         $.each(user, (index, startup) => {
           html += `
@@ -326,9 +324,10 @@ var Fetch = {
                   data-bs-target="#edit-startup"
                   ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a
                 >
-                <a
+                <button
+                onclick="deleteStartup(${startup.id})"
                 class="btn btn-outline-danger"
-                ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a
+                ><i class="fa fa-trash" aria-hidden="true"></i> Delete</button
               >
               </div>
             </div>

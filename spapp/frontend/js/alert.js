@@ -202,6 +202,20 @@ deletePosition = (id) => {
   }
 };
 
+deleteStartup = (id) => {
+  if(confirm("Do you want to delete the startup with the id: " + id + "?")) {
+    $.ajax({
+      url: "../backend/delete_startup.php?id=" + id,
+      type: "DELETE",
+      success: () => {
+        console.log("Succesfully deleted!");
+        Fetch.getStartups();
+        Fetch.getStartupsProfile();
+      },
+    });
+  }
+}
+
 clearStartup = () => {
   $("ul#startupMembers").empty();
 };

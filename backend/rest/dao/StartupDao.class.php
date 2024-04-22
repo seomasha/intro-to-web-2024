@@ -16,17 +16,24 @@ class StartupDao extends BaseDao {
         FROM startups
         WHERE id = :id";
 
-        return $this->query($query, [
+        return $this->query_unique($query, [
             'id' => $id
         ]);
     }
 
     public function getStartups() {
-        $query = "SELECT s.name, s.category, s.description, s.members, u.first_name, u.last_name 
+        $query = "SELECT s.id, s.name, s.category, s.description, s.members, u.first_name, u.last_name 
         FROM startups s 
         JOIN users u ON s.founder_id = u.id";
 
         return $this->query($query, []);
+    }
+
+    public function deleteStartup($id) {
+        $query = "DELETE FROM startups WHERE id = :id";
+        $this->execute($query, [
+            'id' => $id
+        ]);
     }
 }
 

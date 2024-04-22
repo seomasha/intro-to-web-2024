@@ -23,5 +23,9 @@ class StartupService {
     {
         return $this->startupDao->getStartupByID($id);
     }
+
+    public function deleteStartup($id) {
+        $this->startupDao->deleteStartup($id);
+    }
 }
 ?>
