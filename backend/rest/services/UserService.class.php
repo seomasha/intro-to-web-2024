@@ -21,6 +21,17 @@ class UserService {
     public function getUserByID($id) {
         return $this->userDao->getUserByID($id);
     }
+
+    public function deleteUser($id) {
+        $this->userDao->deleteUser($id);
+    }
+
+    public function editUser($user) {
+        $id = $user['id'];
+        unset($user['id']);
+
+        $this->userDao->editUser($id, $user);
+    }
 }
 
 ?>

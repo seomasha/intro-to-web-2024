@@ -8,8 +8,15 @@ $userService = new UserService();
 
 unset($payload['confirmpassword']);
 
-$userService->addUser($payload);
+if($payload['id'] != NULL && $payload['id'] != '') {
+    $user = $userService->editUser($payload);
+}
 
-echo json_encode(["message" => $payload]);
+else {
+    unset($payload['id']);
+    $user = $userService->addUser($payload);
+}
+
+echo json_encode(["message" => $user]);
 
 ?>

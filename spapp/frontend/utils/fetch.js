@@ -439,8 +439,8 @@ var Fetch = {
                   </h6>
                   <div class="text-center">
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn text-primary" data-bs-toggle="modal" data-bs-target="#edit-position" onclick="editPosition(${u.id})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        <button type="button" class="btn text-danger" onclick="deletePosition(${u.id})"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button type="button" class="btn text-primary" data-bs-toggle="modal" data-bs-target="#edit-user" onclick="editUser(${u.id})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        <button type="button" class="btn text-danger" onclick="deleteUser(${u.id})"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </div>
                   </div>
                 </div>

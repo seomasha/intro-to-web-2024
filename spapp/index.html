@@ -109,8 +109,7 @@
               </li>
               <li class="nav-item mx-2">
                 <a class="nav-link" href="#myprofile"
-                  ><i class="fa fa-user" aria-hidden="true"></i> My
-                  profile</a
+                  ><i class="fa fa-user" aria-hidden="true"></i> My profile</a
                 >
               </li>
             </ul>
@@ -782,6 +781,96 @@
             >
               <i class="fa fa-ban" aria-hidden="true"></i> Cancel
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit user-->
+
+    <div
+      class="modal fade"
+      id="edit-user"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: #00396c">Edit user</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" id="editUserForm">
+              <input type="hidden" id="edit_user_id" name="id" />
+              <label for="first_name" style="color: #00396c"
+                >Type in your name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="user_first_name"
+                id="user_first_name"
+              />
+
+              <br />
+
+              <label for="user_last_name" style="color: #00396c"
+                >Type in your surname</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="user_last_name"
+                id="user_last_name"
+              />
+
+              <label class="mt-4" for="username" style="color: #00396c"
+                >Type in username</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="user_name"
+                id="user_name"
+              />
+
+              <br />
+
+              <label for="user_email" style="color: #00396c"
+                >Type in your email</label
+              >
+              <input type="text" class="form-control" name="user_email" id="user_email" />
+              <br />
+              <label for="first_name" style="color: #00396c"
+                >Type in your password</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="user_password"
+                id="user_password"
+              />
+              <br />
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="editButton">
+                  <i class="fa fa-check" aria-hidden="true"></i> Confirm
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
