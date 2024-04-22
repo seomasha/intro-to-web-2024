@@ -318,11 +318,12 @@ var Fetch = {
                 ${startup.category}
               </p>
               <div class="text-center">
-                <a
+                <button
                   class="btn btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#edit-startup"
-                  ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a
+                  onclick="editStartup(${startup.id})"
+                  ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button
                 >
                 <button
                 onclick="deleteStartup(${startup.id})"

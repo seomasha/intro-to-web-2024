@@ -6,8 +6,15 @@ $payload = $_REQUEST;
 
 $startupService = new StartupService();
 
-$startupService->addStartup($payload);
+if($payload['id'] != NULL && $payload['id'] != '') {
+    $startup = $startupService->editStartup($payload);
+}
 
-echo json_encode($payload);
+else {
+    unset($payload['id']);
+    $startup = $startupService->addStartup($payload);
+}
+
+echo json_encode($startup);
 
 ?>

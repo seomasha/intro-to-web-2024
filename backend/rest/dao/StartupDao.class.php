@@ -35,6 +35,18 @@ class StartupDao extends BaseDao {
             'id' => $id
         ]);
     }
+
+    public function editStartup($id, $startup) {
+        $query = "UPDATE startups SET name = :name, category = :category, description = :description, members = :members WHERE id = :id";
+
+        $this->execute($query, [
+            'id' => $id,
+            'name' => $startup['editStartupName'],
+            'description' => $startup['editStartupDescription'],
+            'category' => $startup['editStartupCategory'],
+            'members' => $startup['editStartupMembers']
+        ]);
+    }
 }
 
 ?>

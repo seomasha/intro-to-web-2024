@@ -155,25 +155,42 @@ $("#createStartupForm").validate({
     let mergedData = Object.assign({}, data, defaultValues);
 
     $.post("../backend/add_startup.php", mergedData)
-    .done(function (response) {
-      console.log("Data sent successfully:", mergedData);
-      $("#createStartupForm")[0].reset();
-      Fetch.getStartups();
-      Fetch.getStartupsProfile();
-    })
-    .fail(function (xhr, status, error) {
-      console.error("Error:", error);
-    })
-    .always(function () {
-      unblockUI("body");
-    });
+      .done(function (response) {
+        console.log("Data sent successfully:", mergedData);
+        $("#createStartupForm")[0].reset();
+        Fetch.getStartups();
+        Fetch.getStartupsProfile();
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Error:", error);
+      })
+      .always(function () {
+        unblockUI("body");
+      });
+  },
+});
+
+$("#editStartupForm").validate({
+  submitHandler: (form, event) => {
+    let data = serializeForm(form);
+    $.post("../backend/add_startup.php", data)
+      .done(function (response) {
+        console.log("Data sent successfully:", data);
+        Fetch.getStartupsProfile();
+        Fetch.getStartups();
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Error:", error);
+      })
+      .always(function () {
+        unblockUI("body");
+      });
   },
 });
 
 $("#editPositionForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-
     $.post("../backend/add_position.php", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);

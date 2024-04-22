@@ -265,9 +265,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" style="color: #00396c">
-              Edit position
-            </h5>
+            <h5 class="modal-title" style="color: #00396c">Edit position</h5>
             <button
               type="button"
               class="btn-close"
@@ -308,11 +306,7 @@
               </div>
               <br />
               <div class="modal-footer">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  id="editPosition"
-                >
+                <button type="submit" class="btn btn-primary" id="editPosition">
                   <i class="fa fa-plus" aria-hidden="true"></i> Edit position
                 </button>
                 <button
@@ -449,11 +443,7 @@
               </select>
               <br />
               <div class="modal-footer">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  id="addStartup"
-                >
+                <button type="submit" class="btn btn-primary" id="addStartup">
                   <i class="fa fa-plus" aria-hidden="true"></i> Create startup
                 </button>
                 <button
@@ -656,57 +646,65 @@
           </div>
           <div class="modal-body">
             <form method="post" id="editStartupForm">
-              <label for="startup-name" style="color: #00396c">
+              <input type="hidden" name="id" id="edit_startup_id" />
+              <label for="editStartupName" style="color: #00396c">
                 Startup name
               </label>
               <input
                 type="text"
                 class="form-control"
-                name="startupName"
-                id="startupName"
+                name="editStartupName"
+                id="editStartupName"
               />
               <br />
-              <label for="startup-description" style="color: #00396c"
+              <label for="editStartupDescription" style="color: #00396c"
                 >Edit the description</label
               >
               <textarea
                 class="form-control"
                 style="height: 100px; resize: none"
-                name="startup-description"
-                id="description"
+                name="editStartupDescription"
+                id="editStartupDescription"
               ></textarea>
 
-              <label for="startupMembers" class="mt-4" style="color: #00396c"
+              <label
+                for="editStartupMembers"
+                class="mt-4"
+                style="color: #00396c"
                 >Edit the members (Separate by semicolon ;)</label
               >
               <input
                 class="form-control"
                 type="text"
-                id="startup-members"
-                name="startup-members"
+                id="editStartupMembers"
+                name="editStartupMembers"
               />
 
               <label for="startupCategory" class="mt-4" style="color: #00396c"
                 >What is the category?</label
               >
-              <select class="form-control">
-                <option>IT</option>
-                <option>Graphic Design</option>
-                <option>Digital Marketing</option>
+              <select
+                class="form-control"
+                name="editStartupCategory"
+                id="editStartupCategory"
+              >
+                <option value="IT">IT</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Digital Marketing">Digital Marketing</option>
               </select>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa fa-check" aria-hidden="true"></i> Confirm
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+                </button>
+              </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">
-              <i class="fa fa-check" aria-hidden="true"></i> Confirm
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger"
-              data-bs-dismiss="modal"
-            >
-              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
-            </button>
           </div>
         </div>
       </div>
@@ -824,7 +822,7 @@
     <script src="./frontend/js/alert.js"></script>
     <script src="./frontend/js/jquery.blockUI.js"></script>
     <script src="./frontend/js/forms.js"></script>
-    <script src="./frontend/js/position.js"></script>
+    <script src="./frontend/js/edit.js"></script>
 
     <script>
       function toggleNavbarVisibility() {

@@ -19,13 +19,20 @@ class StartupService {
         return ['data' => $data];
     }
 
-    public function getPositionByID($id)
+    public function getStartupByID($id)
     {
         return $this->startupDao->getStartupByID($id);
     }
 
     public function deleteStartup($id) {
         $this->startupDao->deleteStartup($id);
+    }
+
+    public function editStartup($startup) {
+        $id = $startup['id'];
+        unset($startup['id']);
+
+        $this->startupDao->editStartup($id, $startup);
     }
 }
 ?>
