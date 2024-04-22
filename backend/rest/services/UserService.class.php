@@ -12,6 +12,15 @@ class UserService {
     public function addUser($user) {
         return $this->userDao->addUser($user);
     }
+
+    public function getUsers() {
+        $data = $this->userDao->getUsers();
+        return ["data" => $data];
+    }
+
+    public function getUserByID($id) {
+        return $this->userDao->getUserByID($id);
+    }
 }
 
 ?>
