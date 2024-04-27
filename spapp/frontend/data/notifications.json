@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Sead Masetic",
-    "image": "/spapp/frontend/assets/profilepic.jpg",
+    "image": "./frontend/assets/profilepic.jpg",
     "type": "position",
     "typename": "IT startup"
   },
@@ -10,7 +10,7 @@
   {
     "id": 1,
     "name": "Sead Masetic",
-    "image": "/spapp/frontend/assets/profilepic.jpg",
+    "image": "./frontend/assets/profilepic.jpg",
     "type": "startup",
     "typename": "IT startup"
   },
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "name": "Sead Masetic",
-    "image": "/spapp/frontend/assets/profilepic.jpg",
+    "image": "./frontend/assets/profilepic.jpg",
     "type": "position",
     "typename": "IT startup"
   },
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Sead Masetic",
-    "image": "/spapp/frontend/assets/profilepic.jpg",
+    "image": "./frontend/assets/profilepic.jpg",
     "type": "startup",
     "typename": "IT startup"
   }

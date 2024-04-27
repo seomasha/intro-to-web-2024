@@ -1,8 +1,10 @@
 applyPosition = (startupID) => {
   let positionName = "";
 
-  $.get("./data/positions.json", (data) => {
-    $.each(data, (index, position) => {
+  $.get("frontend/data/positions.json", (data) => {
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, position) => {
       if (position.id === startupID) {
         positionName = position.positionname;
         $("#positionNameAlert").html(positionName);
@@ -24,11 +26,12 @@ applyPosition = (startupID) => {
 };
 
 addFriend = (friendID) => {
-
   let friendName = "";
 
-  $.get("./data/users.json", (data) => {
-    $.each(data, (index, friend) => {
+  $.get("frontend/data/users.json", (data) => {
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, friend) => {
       if (friend.id === friendID) {
         friendName = friend.name;
         $("#friendName").text(friendName);
@@ -52,8 +55,9 @@ addFriend = (friendID) => {
 applyStartup = (startupID) => {
   let startupName = "";
 
-  $.get("./data/startups.json", (data) => {
-    $.each(data, (index, startup) => {
+  $.get("frontend/data/startups.json", (data) => {
+    let jsonData = JSON.parse(data);
+    $.each(jsonData, (index, startup) => {
       if (startup.id === startupID) {
         startupName = startup.name;
         $("#startupName").text(startup.name);
@@ -84,8 +88,9 @@ applyStartup = (startupID) => {
 applyInvestor = (investorID) => {
   let investorName = "";
 
-  $.get("./data/investors.json", (data) => {
-    $.each(data, (index, investor) => {
+  $.get("frontend/data/investors.json", (data) => {
+    let jsonData = JSON.parse(data);
+    $.each(jsonData, (index, investor) => {
       if (investor.id === investorID) {
         investorName = investor.name;
         $("#investorName").text(investor.name);
@@ -112,8 +117,10 @@ applyInvestor = (investorID) => {
 acceptFriendRequest = (userID, requestID) => {
   let requestName = "";
 
-  $.get("./data/users.json", (data) => {
-    $.each(data, (index, user) => {
+  $.get("frontend/data/users.json", (data) => {
+    let jsonData = JSON.parse(data);
+
+    $.each(jsonData, (index, user) => {
       if (user.id === userID) {
         $.each(user.friendRequests, (index, request) => {
           if (request.id === requestID) {
@@ -140,8 +147,9 @@ acceptFriendRequest = (userID, requestID) => {
 declineFriendRequest = (userID, requestID) => {
   let requestName = "";
 
-  $.get("./data/users.json", (data) => {
-    $.each(data, (index, user) => {
+  $.get("frontend/data/users.json", (data) => {
+    let jsonData = JSON.parse(data);
+    $.each(jsonData, (index, user) => {
       if (user.id === userID) {
         $.each(user.friends, (index, request) => {
           if (request.id === requestID) {
@@ -165,7 +173,9 @@ declineFriendRequest = (userID, requestID) => {
               const toastImage = $("#toastImage");
 
               toastTitle.text("Removed friend!");
-              toastBody.text(`You removed ${requestName} from your friend list!`);
+              toastBody.text(
+                `You removed ${requestName} from your friend list!`
+              );
               toastImage.attr("src", "./frontend/assets/decline.gif");
 
               $("#toast").toast("show");
@@ -176,6 +186,48 @@ declineFriendRequest = (userID, requestID) => {
     });
   });
 };
+
+deletePosition = (id) => {
+  if (
+    confirm("Do you want to delete position with the id: " + id + "?") == true
+  ) {
+    $.ajax({
+      url: "../backend/delete_position.php?id=" + id,
+      type: "DELETE",
+      success: () => {
+        console.log("Succesfully deleted!");
+        Fetch.getPositions();
+      },
+    });
+  }
+};
+
+deleteStartup = (id) => {
+  if(confirm("Do you want to delete the startup with the id: " + id + "?")) {
+    $.ajax({
+      url: "../backend/delete_startup.php?id=" + id,
+      type: "DELETE",
+      success: () => {
+        console.log("Succesfully deleted!");
+        Fetch.getStartups();
+        Fetch.getStartupsProfile();
+      },
+    });
+  }
+}
+
+deleteUser = (id) => {
+  if(confirm("Do you want to delete the user with the id: " + id + "?")) {
+    $.ajax({
+      url: "../backend/delete_user.php?id=" + id,
+      type: "DELETE",
+      success: () => {
+        console.log("Succesfully deleted!");
+        Fetch.getUsers();
+      },
+    });
+  }
+}
 
 clearStartup = () => {
   $("ul#startupMembers").empty();
