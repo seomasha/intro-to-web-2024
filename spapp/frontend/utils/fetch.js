@@ -62,7 +62,7 @@ var Fetch = {
                     <div class="gap-2 d-flex justify-content-between">
                       <div class="d-flex">
                         <img
-                        src="./frontend/assets/userimage.png"
+                        src="./frontend/assets/profilepic.jpg"
                         class="rounded-5 rounded-circle"
                         style="width: 50px; height: 50px; background-size: cover"
                         />
