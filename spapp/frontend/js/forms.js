@@ -40,7 +40,7 @@ $("#signup-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    $.post("../backend/add_user.php", data)
+    $.post("../backend/users/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         $("#signup-form")[0].reset();
@@ -80,7 +80,7 @@ $("#signin-form").validate({
 $("#editUserForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/add_user.php", data)
+    $.post("../backend/users/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getUsers();

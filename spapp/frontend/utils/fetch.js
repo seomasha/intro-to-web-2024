@@ -418,12 +418,10 @@ var Fetch = {
   },
 
   getUsers: () => {
-    $.get("../backend/get_users.php", (data) => {
-      let jsonData = JSON.parse(data);
-
+    $.get("../backend/users", (data) => {
       let html = ``;
 
-      $.each(jsonData, (index, users) => {
+      $.each(data, (index, users) => {
         $.each(users, (index, user) => {
           $.each(user, (index, u) => {
             html += `
