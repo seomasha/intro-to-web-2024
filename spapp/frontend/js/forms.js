@@ -120,7 +120,9 @@ $("#createPositionForm").validate({
 
     let mergedData = Object.assign({}, data, defaultValues);
 
-    $.post("../backend/add_position.php", mergedData)
+    console.log(mergedData)
+
+    $.post("../backend/positions/add", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
         $("#createPositionForm")[0].reset();
@@ -208,7 +210,7 @@ $("#editStartupForm").validate({
 $("#editPositionForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/add_position.php", data)
+    $.post("../backend/positions/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getPositions();

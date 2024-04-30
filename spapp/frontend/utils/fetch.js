@@ -49,14 +49,13 @@ var Fetch = {
   },
 
   getPositions: () => {
-    $.get("../backend/get_positions.php", (data) => {
+    $.get("../backend/positions", (data) => {
       let html = ``;
 
-      let jsonData = JSON.parse(data);
-
-      $.each(jsonData, (index, positions) => {
-        $.each(positions, (index, position) => {
-          html += `
+      $.each(data, (index, jsonData) => {
+        $.each(jsonData, (index, positions) => {
+          $.each(positions, (index, position) => {
+            html += `
             <div class="bg-white rounded-5 p-4 border" id="position-${position.id}">
                 <div class="justify-content-start">
                     <div class="gap-2 d-flex justify-content-between">
@@ -133,6 +132,7 @@ var Fetch = {
             </div>
             <br>
             `;
+          })
         });
       });
 

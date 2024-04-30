@@ -1,8 +1,10 @@
 editPosition = (id) => {
-  $.get("../backend/get_position.php?id=" + id, (data) => {
-    $("#edit_id").val(data.id);
-    $("#editPositionName").val(data.positionName);
-    $("#editPositionDescription").val(data.positionDescription);
+  $.get("../backend/positions/" + id, (data) => {
+    $.each(data, (index, position) => {
+      $("#edit_id").val(position.id);
+      $("#editPositionName").val(position.positionName);
+      $("#editPositionDescription").val(position.positionDescription);
+    })
   });
 };
 

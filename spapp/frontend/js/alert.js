@@ -192,7 +192,7 @@ deletePosition = (id) => {
     confirm("Do you want to delete position with the id: " + id + "?") == true
   ) {
     $.ajax({
-      url: "../backend/delete_position.php?id=" + id,
+      url: "../backend/positions/delete/" + id,
       type: "DELETE",
       success: () => {
         console.log("Succesfully deleted!");
