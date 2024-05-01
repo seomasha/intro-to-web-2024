@@ -40,11 +40,11 @@ class UserDao extends BaseDao {
 
         $this->execute($query, [
             'id' => $id,
-            'first_name' => $user['user_first_name'],
-            'last_name' => $user['user_last_name'],
-            'username' => $user['user_name'],
-            'email' => $user['user_email'],
-            'password' => $user['user_password']
+            'first_name' => $user['first_name'],
+            'last_name' => $user['last_name'],
+            'username' => $user['username'],
+            'email' => $user['email'],
+            'password' => $user['password']
         ]);
     }
 }
