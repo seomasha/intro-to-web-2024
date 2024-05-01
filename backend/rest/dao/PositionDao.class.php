@@ -44,8 +44,8 @@ class PositionDao extends BaseDao
 
         $this->execute($query, [
             'id' => $id,
-            'positionName' => $position['editPositionName'],
-            'positionDescription' => $position['editPositionDescription']
+            'positionName' => $position['positionName'],
+            'positionDescription' => $position['positionDescription']
         ]);
     }
 }

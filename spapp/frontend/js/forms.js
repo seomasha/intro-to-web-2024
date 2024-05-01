@@ -120,8 +120,6 @@ $("#createPositionForm").validate({
 
     let mergedData = Object.assign({}, data, defaultValues);
 
-    console.log(mergedData)
-
     $.post("../backend/positions/add", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
