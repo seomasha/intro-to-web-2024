@@ -52,7 +52,7 @@ Flight::group("/users", function () {
      *      @OA\RequestBody(
      *          description="Position data payload",
      *          @OA\JsonContent(
-     *              required={"positionName","positionDescription"},
+     *              required={"first_name","last_name","username","email","password"},
      *              @OA\Property(property="id", type="string", example="1", description="Position ID"),
      *              @OA\Property(property="first_name", type="string", example="Some first name", description="User first name"),
      *              @OA\Property(property="last_name", type="string", example="Some last name", description="User last name"),
