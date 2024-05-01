@@ -173,7 +173,7 @@ $("#createStartupForm").validate({
 
     let mergedData = Object.assign({}, data, defaultValues);
 
-    $.post("../backend/add_startup.php", mergedData)
+    $.post("../backend/startups/add", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
         $("#createStartupForm")[0].reset();
@@ -192,7 +192,7 @@ $("#createStartupForm").validate({
 $("#editStartupForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/add_startup.php", data)
+    $.post("../backend/startups/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getStartupsProfile();

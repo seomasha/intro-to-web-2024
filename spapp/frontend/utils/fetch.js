@@ -6,12 +6,10 @@ var Fetch = {
         checkedValues.push($(this).attr("value"));
       }
     });
-    $.get("../backend/get_startups.php", (data) => {
+    $.get("../backend/startups", (data) => {
       let html = ``;
 
-      let jsonData = JSON.parse(data);
-
-      $.each(jsonData, (index, startups) => {
+      $.each(data, (index, startups) => {
         $.each(startups, (index, startup) => {
           html += `
           <div class="card col-md-3" style="width: 15rem" id="startup-${startup.id}">
@@ -53,9 +51,8 @@ var Fetch = {
       let html = ``;
 
       $.each(data, (index, jsonData) => {
-        $.each(jsonData, (index, positions) => {
-          $.each(positions, (index, position) => {
-            html += `
+        $.each(jsonData, (index, position) => {
+          html += `
             <div class="bg-white rounded-5 p-4 border" id="position-${position.id}">
                 <div class="justify-content-start">
                     <div class="gap-2 d-flex justify-content-between">
@@ -132,7 +129,6 @@ var Fetch = {
             </div>
             <br>
             `;
-          })
         });
       });
 
@@ -295,12 +291,10 @@ var Fetch = {
   },
 
   getStartupsProfile: () => {
-    $.get("../backend/get_startups.php", (data) => {
+    $.get("../backend/startups", (data) => {
       let html = ``;
 
-      let jsonData = JSON.parse(data);
-
-      $.each(jsonData, (index, user) => {
+      $.each(data, (index, user) => {
         $.each(user, (index, startup) => {
           html += `
             <div class="card col-md-3" style="width: 15rem" id="startup-${startup.id}">
@@ -422,9 +416,8 @@ var Fetch = {
       let html = ``;
 
       $.each(data, (index, users) => {
-        $.each(users, (index, user) => {
-          $.each(user, (index, u) => {
-            html += `
+        $.each(users, (index, u) => {
+          html += `
             <div class="card col-md-3" style="width: 15rem" id="startup-${u.id}">
                 <img
                   src="./frontend/assets/startup.jpeg"
@@ -444,7 +437,6 @@ var Fetch = {
                 </div>
               </div>
               `;
-          });
         });
       });
       $("#userSection").html(html);

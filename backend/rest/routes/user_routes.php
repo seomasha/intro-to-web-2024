@@ -8,13 +8,13 @@ Flight::group("/users", function () {
     Flight::route("GET /", function () {
         $data = Flight::get("userService")->getUsers();
 
-        Flight::json(["data" => $data]);
+        Flight::json($data);
     });
 
     Flight::route("GET /@user_id", function ($user_id) {
         $data = Flight::get("userService")->getUserByID($user_id);
 
-        Flight::json(["data" => $data]);
+        Flight::json($data);
     });
 
     Flight::route("POST /add", function () {

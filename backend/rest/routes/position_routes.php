@@ -9,7 +9,7 @@ Flight::group("/positions", function () {
     Flight::route("GET /", function () {
         $data = Flight::get("positionService")->getPositions();
 
-        Flight::json([$data]);
+        Flight::json($data);
     });
 
     Flight::route("POST /add", function () {
@@ -38,6 +38,6 @@ Flight::group("/positions", function () {
     Flight::route("GET /@position_id", function ($position_id) {
         $position = Flight::get("positionService")->getPositionByID($position_id);
 
-        Flight::json([$position]);
+        Flight::json($position);
     });
 });

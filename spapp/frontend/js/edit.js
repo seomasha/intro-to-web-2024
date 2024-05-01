@@ -1,15 +1,13 @@
 editPosition = (id) => {
-  $.get("../backend/positions/" + id, (data) => {
-    $.each(data, (index, position) => {
-      $("#edit_id").val(position.id);
-      $("#editPositionName").val(position.positionName);
-      $("#editPositionDescription").val(position.positionDescription);
-    });
+  $.get("../backend/positions/" + id, (position) => {
+    $("#edit_id").val(position.id);
+    $("#editPositionName").val(position.positionName);
+    $("#editPositionDescription").val(position.positionDescription);
   });
 };
 
 editStartup = (id) => {
-  $.get("../backend/get_startup.php?id=" + id, (data) => {
+  $.get("../backend/startups/" + id, (data) => {
     $("#edit_startup_id").val(data.id);
     $("#editStartupName").val(data.name);
     $("#editStartupDescription").val(data.description);
@@ -23,14 +21,12 @@ editStartup = (id) => {
 };
 
 editUser = (id) => {
-  $.get("../backend/users/" + id, (data) => {
-    $.each(data, (index, user) => {
-      $("#edit_user_id").val(user.id);
-      $("#user_first_name").val(user.first_name);
-      $("#user_last_name").val(user.last_name);
-      $("#user_name").val(user.username);
-      $("#user_email").val(user.email);
-      $("#user_password").val(user.password);
-    });
+  $.get("../backend/users/" + id, (user) => {
+    $("#edit_user_id").val(user.id);
+    $("#user_first_name").val(user.first_name);
+    $("#user_last_name").val(user.last_name);
+    $("#user_name").val(user.username);
+    $("#user_email").val(user.email);
+    $("#user_password").val(user.password);
   });
 };
