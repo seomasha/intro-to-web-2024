@@ -12,4 +12,8 @@ define("DB_HOST", "127.0.0.1");
 define("DB_USER", "root");
 define("DB_PASSWORD", "sonyxperiaM5");
 
+// JWT Secret
+
+define('JWT_SECRET', "qvbDGW.Lb_F_Ne8U}Z;=P=9+Z:A8AP"); 
+
 ?>
