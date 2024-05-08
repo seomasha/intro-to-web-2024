@@ -114,11 +114,11 @@
               </li>
             </ul>
             <div class="d-flex flex-column flex-lg-row gap-3 px-3">
-              <a
-                href="#signin"
+              <button
                 class="text-decoration-none btn btn-outline-danger justify-content-center"
+                onclick="logout()"
               >
-                <i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</button
               >
             </div>
           </div>
@@ -925,6 +925,7 @@
     <script src="./frontend/js/jquery.blockUI.js"></script>
     <script src="./frontend/js/forms.js"></script>
     <script src="./frontend/js/edit.js"></script>
+    <script src="./frontend/js/logout.js"></script>
 
     <script>
       function toggleNavbarVisibility() {
@@ -947,7 +948,16 @@
     </script>
 
     <script>
-      console.log(JSON.parse(window.localStorage.getItem("user")));
+      $.ajaxSetup({
+        beforeSend: function (xhr) {
+          if (JSON.parse(window.localStorage.getItem("user"))) {
+            xhr.setRequestHeader(
+              "Authentication",
+              JSON.parse(window.localStorage.getItem("user")).token
+            );
+          }
+        },
+      });
 
       window.addEventListener("hashchange", function () {
         if (!window.localStorage.getItem("user")) {
