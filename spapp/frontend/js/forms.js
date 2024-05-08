@@ -69,11 +69,29 @@ $("#signin-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    $("#signin-form")[0].reset();
+    $.post("../backend/auth/signin", data)
+      .done(function (response) {
+        console.log(response);
+        $("#signin-form")[0].reset();
+        //LocalStorage.setToLocalStorage("user", response);
+        window.localStorage.setItem("user", JSON.stringify(response));
+        window.location.href = "#home";
+      })
+      .fail(function (xhr, status, error) {
+        const toastTitle = $("#toastTitle");
+        const toastBody = $("#toastBody");
+        const toastImage = $("#toastImage");
 
-    unblockUI("body");
+        toastTitle.text("Invalid email or password");
+        toastBody.text("You provided false credentials!");
+        toastImage.attr("src", "./frontend/assets/decline.gif");
 
-    window.location.href = "#home";
+        $("#toast").toast("show");
+        console.log("Error:", error);
+      })
+      .always(function () {
+        unblockUI("body");
+      });
   },
 });
 
@@ -92,7 +110,7 @@ $("#editUserForm").validate({
         unblockUI("body");
       });
   },
-})
+});
 
 $("#createPositionForm").validate({
   rules: {

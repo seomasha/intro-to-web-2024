@@ -846,14 +846,20 @@
               <label for="email" style="color: #00396c"
                 >Type in your email</label
               >
-              <input type="text" class="form-control" name="email" id="user_email" />
+              <input
+                type="text"
+                class="form-control"
+                name="email"
+                id="user_email"
+              />
               <br />
               <label for="password" style="color: #00396c"
                 >Type in your password</label
               >
               <input
                 type="text"
-                class="form-control"§
+                class="form-control"
+                §
                 name="password"
                 id="user_password"
               />
@@ -941,6 +947,18 @@
     </script>
 
     <script>
+      console.log(JSON.parse(window.localStorage.getItem("user")));
+
+      window.addEventListener("hashchange", function () {
+        if (!window.localStorage.getItem("user")) {
+          window.location.href = "#signin";
+        }
+      });
+
+      if (!window.localStorage.getItem("user")) {
+        window.location.href = "#signin";
+      }
+
       let app = $.spapp({
         templateDir: "./frontend/html/",
       });
