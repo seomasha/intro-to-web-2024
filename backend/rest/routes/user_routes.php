@@ -17,9 +17,11 @@ Flight::group("/users", function () {
      * )
      */
     Flight::route("GET /", function () {
-        $data = Flight::get("userService")->getUsers();
+        if(authMiddleware()) {
+            $data = Flight::get("userService")->getUsers();
 
-        Flight::json($data);
+            Flight::json($data);
+        }
     });
 
     /**
@@ -35,9 +37,11 @@ Flight::group("/users", function () {
      * )
      */
     Flight::route("GET /@user_id", function ($user_id) {
-        $data = Flight::get("userService")->getUserByID($user_id);
+        if(authMiddleware()) {
+            $data = Flight::get("userService")->getUserByID($user_id);
 
-        Flight::json($data);
+            Flight::json($data);
+        }
     });
 
     /**
@@ -64,18 +68,20 @@ Flight::group("/users", function () {
      * )
      */
     Flight::route("POST /add", function () {
-        $payload = Flight::request()->data->getData();
+        if (authMiddleware()) {
+            $payload = Flight::request()->data->getData();
 
-        unset($payload['confirmpassword']);
-
-        if (array_key_exists('id', $payload) && $payload['id'] != NULL && $payload['id'] != '') {
-            $user = Flight::get("userService")->editUser($payload);
-        } else {
-            unset($payload['id']);
-            $user = Flight::get("userService")->addUser($payload);
+            unset($payload['confirmpassword']);
+    
+            if (array_key_exists('id', $payload) && $payload['id'] != NULL && $payload['id'] != '') {
+                $user = Flight::get("userService")->editUser($payload);
+            } else {
+                unset($payload['id']);
+                $user = Flight::get("userService")->addUser($payload);
+            }
+    
+            Flight::json($user);
         }
-
-        Flight::json($user);
     });
 
     /**
@@ -91,12 +97,14 @@ Flight::group("/users", function () {
      * )
      */
     Flight::route("DELETE /delete/@user_id", function ($user_id) {
-        if ($user_id == NULL || $user_id == '') {
-            Flight::halt(500, "You have to provide a valid position ID!");
+        if (authMiddleware()) {
+            if ($user_id == NULL || $user_id == '') {
+                Flight::halt(500, "You have to provide a valid position ID!");
+            }
+    
+            Flight::get("userService")->deleteUser($user_id);
+    
+            Flight::json(['message' => "You have succesfully deleted the position!"]);
         }
-
-        Flight::get("userService")->deleteUser($user_id);
-
-        Flight::json(['message' => "You have succesfully deleted the position!"]);
     });
 });

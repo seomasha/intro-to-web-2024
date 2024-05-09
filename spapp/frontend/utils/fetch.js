@@ -47,94 +47,99 @@ var Fetch = {
   },
 
   getPositions: () => {
-    $.get("../backend/positions", (data) => {
-      let html = ``;
+    $.ajax({
+      url: "../backend/positions",
+      type: "GET",
+      success: function (data) {
+        let html = ``;
 
-      $.each(data, (index, jsonData) => {
-        $.each(jsonData, (index, position) => {
-          html += `
-            <div class="bg-white rounded-5 p-4 border" id="position-${position.id}">
-                <div class="justify-content-start">
-                    <div class="gap-2 d-flex justify-content-between">
-                      <div class="d-flex">
-                        <img
-                        src="./frontend/assets/profilepic.jpg"
-                        class="rounded-5 rounded-circle"
-                        style="width: 50px; height: 50px; background-size: cover"
-                        />
-                        <div class="p-2">
-                        <h2 class="fs-6">
-                            Sead Masetic<br /><span class="fs-6 text-secondary fw-light"
-                            >@mashaseo</span
+        $.each(data, function (index, jsonData) {
+          $.each(jsonData, function (index, position) {
+            html += `
+                        <div class="bg-white rounded-5 p-4 border" id="position-${position.id}">
+                            <div class="justify-content-start">
+                                <div class="gap-2 d-flex justify-content-between">
+                                  <div class="d-flex">
+                                    <img
+                                    src="./frontend/assets/profilepic.jpg"
+                                    class="rounded-5 rounded-circle"
+                                    style="width: 50px; height: 50px; background-size: cover"
+                                    />
+                                    <div class="p-2">
+                                    <h2 class="fs-6">
+                                        Sead Masetic<br /><span class="fs-6 text-secondary fw-light"
+                                        >@mashaseo</span
+                                        >
+                                    </h2>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex">
+                                      <button type="button" class="btn text-primary" data-bs-toggle="modal" data-bs-target="#edit-position" onclick="editPosition(${position.id})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                      <button type="button" class="btn text-danger" onclick="deletePosition(${position.id})"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                  </div>
+                              </div>
+                            </div>
+                            <h6 class="text-primary">${position.positionName}</h6>
+                            <h6 class="text-start mt-4 mb-8 fs-6 fw-light">
+                                ${position.positionDescription}
+                            </h6>
+                            <div class="mt-5 d-flex gap-5">
+                            <div class="d-flex">
+                                <i
+                                class="fa fa-thumbs-up text-primary my-auto"
+                                aria-hidden="true"
+                                ></i>
+                                <h6 class="mx-2 my-auto" style="font-size: 12px">${position.like_count} likes</h6>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fa fa-comment text-primary" aria-hidden="true"></i>
+                                <h6 class="mx-2 my-auto my-auto" style="font-size: 12px">
+                                ${position.comment_count} Comments
+                                </h6>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fa fa-share text-primary" aria-hidden="true"></i>
+                                <h6 class="mx-2 my-auto my-auto" style="font-size: 12px">
+                                ${position.apply_count} applies
+                                </h6>
+                            </div>
+                            </div>
+                            <hr />
+                            <div id="commentSection-${position.id}">
+                            </div>
+                            <div class="d-flex justify-content-evenly">
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like
+                            </button>
+                            <button
+
+                                id="commentBtn-${position.id}"
+                                class="btn btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#add-comment"
                             >
-                        </h2>
+                                <i class="fa fa-comment" aria-hidden="true "></i> Comment
+                            </button>
+                            <button
+                                class="btn btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#apply-position"
+                                onclick="applyPosition(${position.id})"
+                            >
+                                <i class="fa fa-share" aria-hidden="true"></i> Apply
+                            </button>
+                            </div>
                         </div>
-                      </div>
-                      <div class="d-flex">
-                          <button type="button" class="btn text-primary" data-bs-toggle="modal" data-bs-target="#edit-position" onclick="editPosition(${position.id})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                          <button type="button" class="btn text-danger" onclick="deletePosition(${position.id})"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                      </div>
-                  </div>
-                </div>
-                <h6 class="text-primary">${position.positionName}</h6>
-                <h6 class="text-start mt-4 mb-8 fs-6 fw-light">
-                    ${position.positionDescription}
-                </h6>
-                <div class="mt-5 d-flex gap-5">
-                <div class="d-flex">
-                    <i
-                    class="fa fa-thumbs-up text-primary my-auto"
-                    aria-hidden="true"
-                    ></i>
-                    <h6 class="mx-2 my-auto" style="font-size: 12px">${position.like_count} likes</h6>
-                </div>
-                <div class="d-flex">
-                    <i class="fa fa-comment text-primary" aria-hidden="true"></i>
-                    <h6 class="mx-2 my-auto my-auto" style="font-size: 12px">
-                    ${position.comment_count} Comments
-                    </h6>
-                </div>
-                <div class="d-flex">
-                    <i class="fa fa-share text-primary" aria-hidden="true"></i>
-                    <h6 class="mx-2 my-auto my-auto" style="font-size: 12px">
-                    ${position.apply_count} applies
-                    </h6>
-                </div>
-                </div>
-                <hr />
-                <div id="commentSection-${position.id}">
-                </div>
-                <div class="d-flex justify-content-evenly">
-                <button class="btn btn-outline-primary">
-                    <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like
-                </button>
-                <button
-                
-                    id="commentBtn-${position.id}"
-                    class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#add-comment"
-                >
-                    <i class="fa fa-comment" aria-hidden="true "></i> Comment
-                </button>
-                <button
-                    class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#apply-position"
-                    onclick="applyPosition(${position.id})"
-                >
-                    <i class="fa fa-share" aria-hidden="true"></i> Apply
-                </button>
-                </div>
-            </div>
-            <br>
-            `;
+                        <br>
+                        `;
+          });
         });
-      });
 
-      $("#positionSection").html(html);
-    }).fail((error) => {
-      console.log(error);
+        $("#positionSection").html(html);
+      },
+      error: function (error) {
+        console.log(error);
+      },
     });
   },
 
