@@ -118,8 +118,8 @@
                 class="text-decoration-none btn btn-outline-danger justify-content-center"
                 onclick="logout()"
               >
-                <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</button
-              >
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
+              </button>
             </div>
           </div>
         </div>
@@ -961,7 +961,9 @@
 
       window.addEventListener("hashchange", function () {
         if (!window.localStorage.getItem("user")) {
-          window.location.href = "#signin";
+          if (window.location.hash !== "#signup") {
+            window.location.href = "#signin";
+          }
         }
       });
 

@@ -42,8 +42,8 @@ $("#signup-form").validate({
 
     $.post("../backend/users/add", data)
       .done(function (response) {
-        console.log("Data sent successfully:", data);
         $("#signup-form")[0].reset();
+        window.location.href = "#signin"
       })
       .fail(function (xhr, status, error) {
         console.error("Error:", error);
