@@ -17,11 +17,9 @@ Flight::group("/startups", function () {
      * )
      */
     Flight::route("GET /", function () {
-        if(authMiddleware()) {
-            $data = Flight::get("startupService")->getStartups();
+        $data = Flight::get("startupService")->getStartups();
 
-            Flight::json($data);
-        }
+        Flight::json($data);
     });
 
     /**
@@ -37,11 +35,9 @@ Flight::group("/startups", function () {
      * )
      */
     Flight::route("GET /@startup_id", function ($startup_id) {
-        if(authMiddleware()) {
-            $startup = Flight::get("startupService")->getStartupByID($startup_id);
+        $startup = Flight::get("startupService")->getStartupByID($startup_id);
 
-            Flight::json($startup);
-        }
+        Flight::json($startup);
     });
 
     /**
@@ -68,18 +64,16 @@ Flight::group("/startups", function () {
      * )
      */
     Flight::route("POST /add", function () {
-        if(authMiddleware()) {
-            $payload = Flight::request()->data->getData();
+        $payload = Flight::request()->data->getData();
 
-            if (array_key_exists('id', $payload) && $payload['id'] != NULL && $payload['id'] != '') {
-                $startup = Flight::get("startupService")->editStartup($payload);
-            } else {
-                unset($payload['id']);
-                $startup = Flight::get("startupService")->addStartup($payload);
-            }
-    
-            Flight::json([$startup]);
+        if (array_key_exists('id', $payload) && $payload['id'] != NULL && $payload['id'] != '') {
+            $startup = Flight::get("startupService")->editStartup($payload);
+        } else {
+            unset($payload['id']);
+            $startup = Flight::get("startupService")->addStartup($payload);
         }
+
+        Flight::json([$startup]);
     });
 
     /**
@@ -95,15 +89,13 @@ Flight::group("/startups", function () {
      * )
      */
     Flight::route("DELETE /delete/@startup_id", function ($startup_id) {
-        if(authMiddleware()) {
-            if ($startup_id == NULL || $startup_id == '') {
-                header('HTTP/1.1 500 Bad Request');
-                die(json_encode(['error' => "Provide a valid position ID!"]));
-            }
-    
-            Flight::get("startupService")->deleteStartup($startup_id);
-    
-            Flight::json(["message" => "You succesfully deleted a startup!"]);
+        if ($startup_id == NULL || $startup_id == '') {
+            header('HTTP/1.1 500 Bad Request');
+            die(json_encode(['error' => "Provide a valid position ID!"]));
         }
+
+        Flight::get("startupService")->deleteStartup($startup_id);
+
+        Flight::json(["message" => "You succesfully deleted a startup!"]);
     });
 });

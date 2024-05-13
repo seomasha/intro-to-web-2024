@@ -5,30 +5,6 @@ require_once __DIR__ . '/../services/AuthService.class.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-function authMiddleware()
-{
-    try {
-        $token = Flight::request()->getHeader("Authentication");
-
-        if (!$token) {
-            Flight::halt(401, "Missing authentication header.");
-            return false;
-        }
-
-        $decoded_token = JWT::decode($token, new Key(JWT_SECRET, 'HS256'));
-
-        if (!$decoded_token) {
-            Flight::halt(401, "Invalid token.");
-            return false;
-        }
-
-        return true;
-    } catch (\Exception $e) {
-        Flight::halt(401, $e->getMessage());
-        return false;
-    }
-}
-
 Flight::set("auth_service", new AuthService());
 
 Flight::group("/auth", function () {
