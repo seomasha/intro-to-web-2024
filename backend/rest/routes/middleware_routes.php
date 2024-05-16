@@ -5,12 +5,13 @@ use Firebase\JWT\JWT;
 
 Flight::route("/*", function () {
     if (
-        strpos(Flight::request()->url, "/auth/signin") == 0 ||
-        strpos(Flight::request()->url, "/auth/signup") == 0
+        strpos(Flight::request()->url, "/auth/signin") === 0 ||
+        strpos(Flight::request()->url, "/auth/signup") === 0
     ) {
         return TRUE;
     } else {
         try {
+
             $token = Flight::request()->getHeader("Authentication");
 
             if (!$token) {
@@ -32,7 +33,7 @@ Flight::route("/*", function () {
     }
 });
 
-Flight::map('error', function($e) {
+Flight::map('error', function ($e) {
     file_put_contents('logs.txt', $e->getMessage() . PHP_EOL, FILE_APPEND | LOCK_EX);
 
     Flight::halt($e->getCode(), $e->getMessage());
