@@ -75,6 +75,8 @@ $("#signin-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
+    console.log(data);
+
     $.post(url + "auth/signin", data)
       .done(function (response) {
         console.log(response);
