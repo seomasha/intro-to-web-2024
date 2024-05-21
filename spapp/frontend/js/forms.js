@@ -96,6 +96,7 @@ $("#signin-form").validate({
 
         $("#toast").toast("show");
         console.log("Error:", error);
+        console.log("XHR Response:", xhr.responseText);
       })
       .always(function () {
         unblockUI("body");
