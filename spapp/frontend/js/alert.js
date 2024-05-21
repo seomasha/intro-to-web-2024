@@ -1,3 +1,12 @@
+let url = '';
+
+if(location.hostname == "localhost") {
+  url = "../backend/"
+}
+else {
+  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/"
+}
+
 applyPosition = (startupID) => {
   let positionName = "";
 
@@ -192,7 +201,7 @@ deletePosition = (id) => {
     confirm("Do you want to delete position with the id: " + id + "?") == true
   ) {
     $.ajax({
-      url: "../backend/positions/delete/" + id,
+      url: url + "positions/delete/" + id,
       type: "DELETE",
       success: () => {
         console.log("Succesfully deleted!");
@@ -205,7 +214,7 @@ deletePosition = (id) => {
 deleteStartup = (id) => {
   if(confirm("Do you want to delete the startup with the id: " + id + "?")) {
     $.ajax({
-      url: "../backend/startups/delete/" + id,
+      url: url + "startups/delete/" + id,
       type: "DELETE",
       success: () => {
         console.log("Succesfully deleted!");
@@ -219,7 +228,7 @@ deleteStartup = (id) => {
 deleteUser = (id) => {
   if(confirm("Do you want to delete the user with the id: " + id + "?")) {
     $.ajax({
-      url: "../backend/users/delete/" + id,
+      url: url + "users/delete/" + id,
       type: "DELETE",
       success: () => {
         console.log("Succesfully deleted!");

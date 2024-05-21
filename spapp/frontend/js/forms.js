@@ -1,3 +1,12 @@
+let url = '';
+
+if(location.hostname == "localhost") {
+  url = "../backend/"
+}
+else {
+  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/"
+}
+
 $("#signup-form").validate({
   rules: {
     first_name: {
@@ -40,7 +49,7 @@ $("#signup-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    $.post("../backend/users/add", data)
+    $.post(url + "users/add", data)
       .done(function (response) {
         $("#signup-form")[0].reset();
         window.location.href = "#signin"
@@ -69,7 +78,7 @@ $("#signin-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    $.post("../backend/auth/signin", data)
+    $.post(url + "auth/signin", data)
       .done(function (response) {
         console.log(response);
         $("#signin-form")[0].reset();
@@ -98,7 +107,7 @@ $("#signin-form").validate({
 $("#editUserForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/users/add", data)
+    $.post(url + "users/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getUsers();
@@ -138,7 +147,7 @@ $("#createPositionForm").validate({
 
     let mergedData = Object.assign({}, data, defaultValues);
 
-    $.post("../backend/positions/add", mergedData)
+    $.post(url + "positions/add", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
         $("#createPositionForm")[0].reset();
@@ -189,7 +198,7 @@ $("#createStartupForm").validate({
 
     let mergedData = Object.assign({}, data, defaultValues);
 
-    $.post("../backend/startups/add", mergedData)
+    $.post(url + "startups/add", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
         $("#createStartupForm")[0].reset();
@@ -226,7 +235,7 @@ $("#editStartupForm").validate({
 $("#editPositionForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/positions/add", data)
+    $.post(url + "positions/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getPositions();

@@ -1,5 +1,14 @@
+let url = '';
+
+if(location.hostname == "localhost") {
+  url = "../backend/"
+}
+else {
+  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/"
+}
+
 editPosition = (id) => {
-  $.get("../backend/positions/" + id, (position) => {
+  $.get(url + "positions/" + id, (position) => {
     $("#edit_id").val(position.id);
     $("#editPositionName").val(position.positionName);
     $("#editPositionDescription").val(position.positionDescription);
@@ -7,7 +16,7 @@ editPosition = (id) => {
 };
 
 editStartup = (id) => {
-  $.get("../backend/startups/" + id, (data) => {
+  $.get(url + "startups/" + id, (data) => {
     $("#edit_startup_id").val(data.id);
     $("#editStartupName").val(data.name);
     $("#editStartupDescription").val(data.description);
@@ -21,7 +30,7 @@ editStartup = (id) => {
 };
 
 editUser = (id) => {
-  $.get("../backend/users/" + id, (user) => {
+  $.get(url + "users/" + id, (user) => {
     $("#edit_user_id").val(user.id);
     $("#user_first_name").val(user.first_name);
     $("#user_last_name").val(user.last_name);

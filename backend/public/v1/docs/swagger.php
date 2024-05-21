@@ -2,7 +2,12 @@
 
 require "../../../../vendor/autoload.php";
 
-define('BASE_URL', 'http://localhost/ibu-startup/backend/');
+if($_SERVER["SERVER_NAME"] == 'localhost' || $_SERVER["SERVER_NAME"] == '127.0.0.1') {
+    define('BASE_URL', 'http://localhost/ibu-startup/backend/');
+}
+else {
+    define('BASE_URL', $_SERVER["SERVER_NAME"] . '/backend/');
+}
 
 error_reporting(0);
 

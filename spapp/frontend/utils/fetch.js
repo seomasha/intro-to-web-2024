@@ -1,3 +1,11 @@
+let url = "";
+
+if (location.hostname == "localhost") {
+  url = "../backend/";
+} else {
+  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/";
+}
+
 var Fetch = {
   getStartups: (category = "") => {
     const checkedValues = [];
@@ -6,7 +14,7 @@ var Fetch = {
         checkedValues.push($(this).attr("value"));
       }
     });
-    $.get("../backend/startups", (data) => {
+    $.get(url + "startups", (data) => {
       let html = ``;
 
       $.each(data, (index, startups) => {
@@ -48,7 +56,7 @@ var Fetch = {
 
   getPositions: () => {
     $.ajax({
-      url: "../backend/positions",
+      url: url + "positions",
       type: "GET",
       success: function (data) {
         let html = ``;
@@ -296,7 +304,7 @@ var Fetch = {
   },
 
   getStartupsProfile: () => {
-    $.get("../backend/startups", (data) => {
+    $.get(url + "startups", (data) => {
       let html = ``;
 
       $.each(data, (index, user) => {
@@ -417,7 +425,7 @@ var Fetch = {
   },
 
   getUsers: () => {
-    $.get("../backend/users", (data) => {
+    $.get(url + "users", (data) => {
       let html = ``;
 
       $.each(data, (index, users) => {
