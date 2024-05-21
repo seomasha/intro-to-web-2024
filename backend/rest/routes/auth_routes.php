@@ -54,6 +54,8 @@ Flight::group("/auth", function () {
         Flight::json(
             array_merge($user, ['token' => $token])
         );
+
+        die();
     });
 
     /**
@@ -74,7 +76,7 @@ Flight::group("/auth", function () {
         try {
             $token = Flight::request()->getHeader("Authentication");
 
-            if(!$token) {
+            if (!$token) {
                 Flight::halt(401, "Missing authentication header.");
             }
 

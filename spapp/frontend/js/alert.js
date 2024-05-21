@@ -6,7 +6,7 @@ if(location.hostname == "localhost") {
 else {
   url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/"
 }
-/*
+
 applyPosition = (startupID) => {
   let positionName = "";
 
@@ -33,6 +33,7 @@ applyPosition = (startupID) => {
     $("#toast").toast("show");
   });
 };
+
 addFriend = (friendID) => {
   let friendName = "";
 
@@ -194,7 +195,7 @@ declineFriendRequest = (userID, requestID) => {
     });
   });
 };
-*/
+
 deletePosition = (id) => {
   if (
     confirm("Do you want to delete position with the id: " + id + "?") == true
