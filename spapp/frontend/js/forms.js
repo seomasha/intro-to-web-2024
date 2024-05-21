@@ -1,10 +1,9 @@
-let url = '';
+let url = "";
 
-if(location.hostname == "localhost") {
-  url = "../backend/"
-}
-else {
-  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/"
+if (location.hostname == "localhost") {
+  url = "../backend/";
+} else {
+  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/";
 }
 
 $("#signup-form").validate({
@@ -52,7 +51,7 @@ $("#signup-form").validate({
     $.post(url + "users/add", data)
       .done(function (response) {
         $("#signup-form")[0].reset();
-        window.location.href = "#signin"
+        window.location.href = "#signin";
       })
       .fail(function (xhr, status, error) {
         console.error("Error:", error);

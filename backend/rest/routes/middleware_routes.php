@@ -6,7 +6,8 @@ use Firebase\JWT\JWT;
 Flight::route("/*", function () {
     if (
         strpos(Flight::request()->url, "/auth/signin") === 0 ||
-        strpos(Flight::request()->url, "/auth/signup") === 0
+        strpos(Flight::request()->url, "/auth/signup") === 0 ||
+        strpos(Flight::request()->url, "/users/add") === 0
     ) {
         return TRUE;
     } else {
