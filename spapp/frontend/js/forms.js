@@ -82,7 +82,7 @@ $("#signin-form").validate({
         console.log(response);
         $("#signin-form")[0].reset();
         //LocalStorage.setToLocalStorage("user", response);
-        window.localStorage.setItem("user", JSON.stringify(response));
+        window.localStorage.setItem("user", response);
         window.location.href = "#home";
       })
       .fail(function (xhr, status, error) {
