@@ -2,6 +2,7 @@
 
 phpinfo();
 
+/*
 $variable_name = 'DB_NAME'; // Change this to the variable you want to check
 
 // Retrieve the environment variable
@@ -13,6 +14,6 @@ if ($variable_value !== false) {
 } else {
     echo "$variable_name is not set.";
 }
-
+*/
 echo Config::DB_NAME();
 
