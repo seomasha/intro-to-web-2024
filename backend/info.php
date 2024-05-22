@@ -15,5 +15,7 @@ if ($variable_value !== false) {
     echo "$variable_name is not set.";
 }
 */
-echo Config::DB_NAME();
+echo $_ENV['DB_NAME'];
+echo $_ENV['DB_USER'];
+echo $_ENV['DB_PASSWORD'];
 
