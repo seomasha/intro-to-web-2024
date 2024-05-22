@@ -14,31 +14,31 @@ class Config
 
     public static function DB_NAME()
     {
-        return $_ENV['DB_NAME'] ?? "ibu_startup";
+        return Config::get_env("DB_NAME", "ibu_startup");
     }
 
     public static function DB_PORT()
     {
-        return getenv("DB_PORT") ?? "3306";
+        return Config::get_env("DB_PORT", "3306");
     }
 
     public static function DB_HOST()
     {
-        return getenv("DB_HOST") ?? "localhost";
+        return Config::get_env("DB_HOST", "127.0.0.1");
     }
 
     public static function DB_USER()
     {
-        return getenv("DB_USER") ?? "user";
+        return Config::get_env("DB_USER", "root");
     }
 
     public static function DB_PASSWORD()
     {
-        return getenv("DB_PASSWORD") ?? "sonyxperiaM5";
+        return Config::get_env("DB_PASSWORD", "sonyxperiaM5");
     }
 
     public static function JWT_SECRET()
     {
-        return getenv("JWT_SECRET") ?? "qvbDGW.Lb_F_Ne8U}Z;=P=9+Z:A8AP";
+        return Config::get_env("JWT_SECRET", "qvbDGW.Lb_F_Ne8U}Z;=P=9+Z:A8AP");
     }
 }

@@ -1,4 +1,4 @@
-<?
+<?php
 
 phpinfo();
 
@@ -15,7 +15,5 @@ if ($variable_value !== false) {
     echo "$variable_name is not set.";
 }
 */
-echo $_ENV['DB_NAME'];
-echo $_ENV['DB_USER'];
-echo $_ENV['DB_PASSWORD'];
+echo Config::DB_NAME();
 
