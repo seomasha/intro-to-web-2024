@@ -2,7 +2,7 @@
 
 phpinfo();
 
-$variable_name = 'JWT_SECRET'; // Change this to the variable you want to check
+$variable_name = 'DB_NAME'; // Change this to the variable you want to check
 
 // Retrieve the environment variable
 $variable_value = getenv($variable_name);
