@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . "/rest/config.php";
 phpinfo();
 
 /*
@@ -16,4 +16,3 @@ if ($variable_value !== false) {
 }
 */
 echo Config::DB_NAME();
-
