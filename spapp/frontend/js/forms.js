@@ -83,6 +83,7 @@ $("#signin-form").validate({
         window.location.href = "#home";
       })
       .fail(function (xhr, status, error) {
+        console.log("here");
         const toastTitle = $("#toastTitle");
         const toastBody = $("#toastBody");
         const toastImage = $("#toastImage");
