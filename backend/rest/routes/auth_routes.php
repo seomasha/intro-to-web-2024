@@ -72,7 +72,7 @@ Flight::group("/auth", function () {
      */
     Flight::route("POST /signout", function () {
         try {
-            $token = Flight::request()->getHeader("Authentication");
+            $token = Flight::request()->getHeader("Authorization");
 
             if (!$token) {
                 Flight::halt(401, "Missing authentication header.");

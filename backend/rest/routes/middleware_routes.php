@@ -13,7 +13,7 @@ Flight::route("/*", function () {
     } else {
         try {
 
-            $token = Flight::request()->getHeader("Authentication");
+            $token = Flight::request()->getHeader("Authorization");
 
             if (!$token) {
                 Flight::halt(401, "Missing authentication header.");

@@ -952,7 +952,7 @@
         beforeSend: function (xhr) {
           if (JSON.parse(window.localStorage.getItem("user"))) {
             xhr.setRequestHeader(
-              "Authentication",
+              "Authorization",
               JSON.parse(window.localStorage.getItem("user")).token
             );
           }
