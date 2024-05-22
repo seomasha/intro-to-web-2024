@@ -55,7 +55,7 @@ Flight::group("/auth", function () {
             array_merge($user, ['token' => $token])
         );
         */
-        Flight::json($jwt_payload);
+        Flight::json($user);
     });
 
     /**
