@@ -2,9 +2,10 @@
 
 require_once __DIR__ . "/../config.php";
 
+
+
 class BaseDao
 {
-
     protected $connection;
     private $table;
 
@@ -12,7 +13,7 @@ class BaseDao
     {
         $this->table = $table;
         try {
-            $this->connection = new PDO("mysql:host=" . Config::DB_HOST() . ";dbname=" . Config::DB_NAME() . ";port=" . Config::DB_PORT(), Config::DB_USER(), Config::DB_PASSWORD(), [
+            $this->connection = new PDO("mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'] . ";port=" . $_ENV["DB_PORT"], $_ENV["DB_USER"], $_ENV["DB_PASSWORD"], [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
