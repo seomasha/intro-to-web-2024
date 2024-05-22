@@ -44,7 +44,7 @@ Flight::group("/auth", function () {
             'iat' => time(),
             'exp' => time() + (60 * 60 * 24) //valid for one day
         ];
-
+        /*
         $token = JWT::encode(
             $jwt_payload,
             Config::JWT_SECRET(),
@@ -54,6 +54,8 @@ Flight::group("/auth", function () {
         Flight::json(
             array_merge($user, ['token' => $token])
         );
+        */
+        Flight::json($jwt_payload);
     });
 
     /**
