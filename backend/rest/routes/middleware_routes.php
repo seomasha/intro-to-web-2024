@@ -3,7 +3,7 @@
 use Firebase\JWT\Key;
 use Firebase\JWT\JWT;
 
-//header("Content-Type", "application/json");
+header("Content-Type", "application/json");
 
 Flight::route("/*", function () {
     if (
@@ -15,7 +15,7 @@ Flight::route("/*", function () {
     } else {
         try {
 
-            $token = Flight::request()->getHeader("Authorization");
+            $token = Flight::request()->getHeader("Authentication");
 
             if (!$token) {
                 Flight::halt(401, "Missing authentication header.");
