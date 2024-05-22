@@ -3,6 +3,8 @@
 use Firebase\JWT\Key;
 use Firebase\JWT\JWT;
 
+header("Content-Type", "application/json");
+
 Flight::route("/*", function () {
     if (
         strpos(Flight::request()->url, "/auth/signin") === 0 ||
