@@ -3,7 +3,7 @@
 use Firebase\JWT\Key;
 use Firebase\JWT\JWT;
 
-header("Content-Type", "application/json");
+//header("Content-Type", "application/json");
 
 Flight::route("/*", function () {
     if (
