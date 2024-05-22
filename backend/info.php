@@ -23,3 +23,4 @@ echo Config::DB_USER();
 echo Config::JWT_SECRET();
 
 echo Config::get_env("JWT_SECRET", "testiranje");
+echo getenv("DB_NAME");
