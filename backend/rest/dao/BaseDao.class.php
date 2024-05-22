@@ -58,3 +58,5 @@ class BaseDao
         return $entity;
     }
 }
+
+echo Config::DB_HOST();
