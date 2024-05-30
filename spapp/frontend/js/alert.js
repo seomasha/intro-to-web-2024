@@ -4,7 +4,7 @@ if(location.hostname == "localhost") {
   url = "../backend/"
 }
 else {
-  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/"
+  url = "https://ibu-startup-app-k8tq2.ondigitalocean.app/backend/"
 }
 
 applyPosition = (startupID) => {
