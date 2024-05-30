@@ -3,7 +3,7 @@ let url = "";
 if (location.hostname == "localhost") {
   url = "../backend/";
 } else {
-  url = "https://ibu-startup-38bd9401daac.herokuapp.com/backend/";
+  url = "https://ibu-startup-lrk7c.ondigitalocean.app/backend/";
 }
 
 var Fetch = {
