@@ -46,7 +46,7 @@
           <a href="#signup">Click here to create an account!</a>
         </div>
         <button type="submit" name="submit" class="btn btn-primary btn-block">
-          Submit
+          Sign in
         </button>
       </form>
     </div>
@@ -57,5 +57,10 @@
       crossorigin="anonymous"
     ></script>
     <script src="./frontend/js/forms.js"></script>
+    <script>
+      if(JSON.parse(window.localStorage.getItem("user"))) {
+        window.location.href = '#home';
+      }
+    </script>
   </body>
 </html>

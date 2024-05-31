@@ -41,10 +41,10 @@ class StartupDao extends BaseDao {
 
         $this->execute($query, [
             'id' => $id,
-            'name' => $startup['editStartupName'],
-            'description' => $startup['editStartupDescription'],
-            'category' => $startup['editStartupCategory'],
-            'members' => $startup['editStartupMembers']
+            'name' => $startup['name'],
+            'description' => $startup['description'],
+            'category' => $startup['category'],
+            'members' => $startup['members']
         ]);
     }
 }

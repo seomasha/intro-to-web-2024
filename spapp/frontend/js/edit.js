@@ -1,13 +1,20 @@
+if(location.hostname == "localhost") {
+  url = "../backend/"
+}
+else {
+  url = "https://ibu-startup-app-k8tq2.ondigitalocean.app/backend/"
+}
+
 editPosition = (id) => {
-  $.get("../backend/get_position.php?id=" + id, (data) => {
-    $("#edit_id").val(data.id);
-    $("#editPositionName").val(data.positionName);
-    $("#editPositionDescription").val(data.positionDescription);
+  $.get(url + "positions/" + id, (position) => {
+    $("#edit_id").val(position.id);
+    $("#editPositionName").val(position.positionName);
+    $("#editPositionDescription").val(position.positionDescription);
   });
 };
 
 editStartup = (id) => {
-  $.get("../backend/get_startup.php?id=" + id, (data) => {
+  $.get(url + "startups/" + id, (data) => {
     $("#edit_startup_id").val(data.id);
     $("#editStartupName").val(data.name);
     $("#editStartupDescription").val(data.description);
@@ -21,12 +28,12 @@ editStartup = (id) => {
 };
 
 editUser = (id) => {
-  $.get("../backend/get_user.php?id=" + id, (data) => {
-    $("#edit_user_id").val(data.id);
-    $("#user_first_name").val(data.first_name);
-    $("#user_last_name").val(data.last_name);
-    $("#user_name").val(data.username);
-    $("#user_email").val(data.email);
-    $("#user_password").val(data.password);
-  })
-}
+  $.get(url + "users/" + id, (user) => {
+    $("#edit_user_id").val(user.id);
+    $("#user_first_name").val(user.first_name);
+    $("#user_last_name").val(user.last_name);
+    $("#user_name").val(user.username);
+    $("#user_email").val(user.email);
+    $("#user_password").val(user.password);
+  });
+};

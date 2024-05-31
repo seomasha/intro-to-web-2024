@@ -10,6 +10,7 @@ class UserService {
     }
 
     public function addUser($user) {
+        $user['password'] = password_hash($user['password'], PASSWORD_BCRYPT);
         return $this->userDao->addUser($user);
     }
 

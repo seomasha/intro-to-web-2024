@@ -1,3 +1,9 @@
+if (location.hostname == "localhost") {
+  url = "../backend/";
+} else {
+  url = "https://ibu-startup-app-k8tq2.ondigitalocean.app/backend/";
+}
+
 $("#signup-form").validate({
   rules: {
     first_name: {
@@ -40,10 +46,10 @@ $("#signup-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    $.post("../backend/add_user.php", data)
+    $.post(url + "users/add", data)
       .done(function (response) {
-        console.log("Data sent successfully:", data);
         $("#signup-form")[0].reset();
+        window.location.href = "#signin";
       })
       .fail(function (xhr, status, error) {
         console.error("Error:", error);
@@ -69,18 +75,37 @@ $("#signin-form").validate({
     blockUI("body");
     let data = serializeForm(form);
 
-    $("#signin-form")[0].reset();
+    $.post(url + "auth/signin", data)
+      .done(function (response) {
+        $("#signin-form")[0].reset();
+        //LocalStorage.setToLocalStorage("user", response);
+        window.localStorage.setItem("user", JSON.stringify(response));
+        window.location.href = "#home";
+      })
+      .fail(function (xhr, status, error) {
+        console.log("here");
+        const toastTitle = $("#toastTitle");
+        const toastBody = $("#toastBody");
+        const toastImage = $("#toastImage");
 
-    unblockUI("body");
+        toastTitle.text("Invalid email or password");
+        toastBody.text("You provided false credentials!");
+        toastImage.attr("src", "./frontend/assets/decline.gif");
 
-    window.location.href = "#home";
+        $("#toast").toast("show");
+        console.log("Error:", error);
+        console.log("XHR Response:", xhr.responseText);
+      })
+      .always(function () {
+        unblockUI("body");
+      });
   },
 });
 
 $("#editUserForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/add_user.php", data)
+    $.post(url + "users/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getUsers();
@@ -92,7 +117,7 @@ $("#editUserForm").validate({
         unblockUI("body");
       });
   },
-})
+});
 
 $("#createPositionForm").validate({
   rules: {
@@ -120,7 +145,7 @@ $("#createPositionForm").validate({
 
     let mergedData = Object.assign({}, data, defaultValues);
 
-    $.post("../backend/add_position.php", mergedData)
+    $.post(url + "positions/add", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
         $("#createPositionForm")[0].reset();
@@ -171,7 +196,7 @@ $("#createStartupForm").validate({
 
     let mergedData = Object.assign({}, data, defaultValues);
 
-    $.post("../backend/add_startup.php", mergedData)
+    $.post(url + "startups/add", mergedData)
       .done(function (response) {
         console.log("Data sent successfully:", mergedData);
         $("#createStartupForm")[0].reset();
@@ -190,7 +215,7 @@ $("#createStartupForm").validate({
 $("#editStartupForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/add_startup.php", data)
+    $.post("../backend/startups/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getStartupsProfile();
@@ -208,7 +233,7 @@ $("#editStartupForm").validate({
 $("#editPositionForm").validate({
   submitHandler: (form, event) => {
     let data = serializeForm(form);
-    $.post("../backend/add_position.php", data)
+    $.post(url + "positions/add", data)
       .done(function (response) {
         console.log("Data sent successfully:", data);
         Fetch.getPositions();
